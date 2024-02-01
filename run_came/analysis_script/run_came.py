@@ -1,10 +1,11 @@
 # -- coding: utf-8 --
-# @Time : 2022/10/15 11:30
+# @Time : 2024/02/01 11:30
 # @Author : Biao Zhang
 # @Email : littlebiao@outlook.com
-# @File : came_ttest_adjust_2.py
+# @File : run_came.py
 import sys
-sys.path.append('..')
+sys.path.append('../')
+
 from analysis_utils import ttest_plot_utils
 from analysis_utils import homo_random_config as config
 import os

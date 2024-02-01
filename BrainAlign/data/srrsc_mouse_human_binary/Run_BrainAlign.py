@@ -11,46 +11,20 @@ from BrainAlign.brain_analysis.configs import sr_rsc_config_binary
 from BrainAlign.brain_analysis.data_utils import load_dimensions_binary
 from BrainAlign.brain_analysis import process
 from BrainAlign.SR_RSC import main_sr_rsc
-from BrainAlign.brain_analysis.analysis import load_srrsc_embeddings, \
-    homo_corr, \
-    random_corr,\
-    plot_homo_random,\
-    ttest_homo_random, \
-    cross_species_binary_clustering, \
-    umap_seperate, \
-    spatial_alignment, \
-    spatial_alignment_mouse, \
-    umap_genes_seperate, \
-    cross_species_genes_clustering, \
-    load_homo_genes, \
-    brain_region_classfier,\
-    align_cross_species,\
-    genes_homo_random_corr,\
-    cross_evaluation_aligment, \
-    cross_evaluation_aligment_cluster
+from BrainAlign.brain_analysis.analysis import load_srrsc_embeddings
 
 from BrainAlign.brain_analysis.analysis_main import alignment_STs, alignment_STs_analysis,\
     gene_comparison
-
 from BrainAlign.brain_analysis.analysis_anatomical import anatomical_STs_analysis
-
 from BrainAlign.brain_analysis.analysis_genomic import genomic_analysis
-
 from BrainAlign.brain_analysis.process import get_spatial_relation
-
 from BrainAlign.brain_analysis.analysis_spatial import spatial_analysis
-
 import time
-
 import warnings
 warnings.filterwarnings("ignore")
 
-
 if __name__ == '__main__':
     cfg = sr_rsc_config_binary._C
-    #cfg.BrainAlign.DATA_PATH = './data/'
-    #cfg.BrainAlign_args.data_path = "./data/"
-
     cfg.SRRSC_args.if_pretrained = False
     #cfg.freeze()
     cfg.CAME.path_rawdata1 = '../../../run_came/brain_mouse_2020sa/mouse_2020sa_64regions.h5ad'
@@ -85,12 +59,12 @@ if __name__ == '__main__':
 
     S, M, binary_S, binary_M, binary_H, binary_V = load_dimensions_binary(cfg.CAME.ROOT + 'datapair_init.pickle')
 
-    cfg.BrainAlign.S = S  # 21749 + 3682
-    cfg.BrainAlign.M = M  # 4035 + 6507
+    cfg.BrainAlign.S = S
+    cfg.BrainAlign.M = M
 
-    cfg.BrainAlign.binary_S = binary_S  # ,
-    cfg.BrainAlign.binary_M = binary_M  # 1034  # 4035
-    cfg.BrainAlign.binary_H = binary_H  # 1004  # 6507
+    cfg.BrainAlign.binary_S = binary_S
+    cfg.BrainAlign.binary_M = binary_M
+    cfg.BrainAlign.binary_H = binary_H
     cfg.BrainAlign.binary_V = binary_V
 
     cfg.BrainAlign.node_relation = 'spatial'  # 'spatial' # knn
@@ -175,13 +149,6 @@ if __name__ == '__main__':
     alignment_STs_analysis_obj.experiment_10_1_check_alignment_plot()
     alignment_STs_analysis_obj.experiment_11_paga()
 
-    #alignment_STs_analysis_obj.experiment_7_align_cross_species()
-    #
-    #alignment_STs_analysis_obj.experiment_4_cross_species_genes_analysis()
-    #alignment_STs_analysis_obj.experiment_4_1_genes_statistics()
-    #alignment_STs_analysis_obj.experiment_8_cross_evaluation_aligment_cluster()
-    #alignment_STs_analysis_obj.experiment_9_name_clusters()
-    #alignment_STs_analysis_obj.experiment_10_check_alignment()
 
     #alignment_STs_analysis_obj.forward()
     genomic_analysis_obj = genomic_analysis(cfg)
