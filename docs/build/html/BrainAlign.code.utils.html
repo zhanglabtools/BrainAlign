@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BrainAlign.code.utils package &mdash; BrainAlign 0.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            BrainAlign
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">BrainAlign.code.utils package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-BrainAlign.code.utils.evaluate">BrainAlign.code.utils.evaluate module</a><ul>
+<li><a class="reference internal" href="#BrainAlign.code.utils.evaluate.evaluate"><code class="docutils literal notranslate"><span class="pre">evaluate()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-BrainAlign.code.utils.load_data">BrainAlign.code.utils.load_data module</a><ul>
+<li><a class="reference internal" href="#BrainAlign.code.utils.load_data.encode_onehot"><code class="docutils literal notranslate"><span class="pre">encode_onehot()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.code.utils.load_data.load_acm"><code class="docutils literal notranslate"><span class="pre">load_acm()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.code.utils.load_data.load_aminer"><code class="docutils literal notranslate"><span class="pre">load_aminer()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.code.utils.load_data.load_data"><code class="docutils literal notranslate"><span class="pre">load_data()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.code.utils.load_data.load_dblp"><code class="docutils literal notranslate"><span class="pre">load_dblp()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.code.utils.load_data.load_freebase"><code class="docutils literal notranslate"><span class="pre">load_freebase()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.code.utils.load_data.load_mouse_human"><code class="docutils literal notranslate"><span class="pre">load_mouse_human()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.code.utils.load_data.load_mouse_human_binary"><code class="docutils literal notranslate"><span class="pre">load_mouse_human_binary()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.code.utils.load_data.load_mouse_human_sagittal"><code class="docutils literal notranslate"><span class="pre">load_mouse_human_sagittal()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.code.utils.load_data.load_mouse_human_three"><code class="docutils literal notranslate"><span class="pre">load_mouse_human_three()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.code.utils.load_data.normalize_adj"><code class="docutils literal notranslate"><span class="pre">normalize_adj()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.code.utils.load_data.preprocess_features"><code class="docutils literal notranslate"><span class="pre">preprocess_features()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.code.utils.load_data.sparse_mx_to_torch_sparse_tensor"><code class="docutils literal notranslate"><span class="pre">sparse_mx_to_torch_sparse_tensor()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-BrainAlign.code.utils.logger">BrainAlign.code.utils.logger module</a><ul>
+<li><a class="reference internal" href="#BrainAlign.code.utils.logger.setup_logger"><code class="docutils literal notranslate"><span class="pre">setup_logger()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-BrainAlign.code.utils.logreg">BrainAlign.code.utils.logreg module</a><ul>
+<li><a class="reference internal" href="#BrainAlign.code.utils.logreg.LogReg"><code class="docutils literal notranslate"><span class="pre">LogReg</span></code></a><ul>
+<li><a class="reference internal" href="#BrainAlign.code.utils.logreg.LogReg.forward"><code class="docutils literal notranslate"><span class="pre">LogReg.forward()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.code.utils.logreg.LogReg.training"><code class="docutils literal notranslate"><span class="pre">LogReg.training</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.code.utils.logreg.LogReg.weights_init"><code class="docutils literal notranslate"><span class="pre">LogReg.weights_init()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-BrainAlign.code.utils.params">BrainAlign.code.utils.params module</a><ul>
+<li><a class="reference internal" href="#BrainAlign.code.utils.params.acm_params"><code class="docutils literal notranslate"><span class="pre">acm_params()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.code.utils.params.aminer_params"><code class="docutils literal notranslate"><span class="pre">aminer_params()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.code.utils.params.dblp_params"><code class="docutils literal notranslate"><span class="pre">dblp_params()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.code.utils.params.freebase_params"><code class="docutils literal notranslate"><span class="pre">freebase_params()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.code.utils.params.mouse_human_all_binary_params"><code class="docutils literal notranslate"><span class="pre">mouse_human_all_binary_params()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.code.utils.params.mouse_human_binary_params"><code class="docutils literal notranslate"><span class="pre">mouse_human_binary_params()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.code.utils.params.mouse_human_params"><code class="docutils literal notranslate"><span class="pre">mouse_human_params()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.code.utils.params.mouse_human_sagittal_params"><code class="docutils literal notranslate"><span class="pre">mouse_human_sagittal_params()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.code.utils.params.set_params"><code class="docutils literal notranslate"><span class="pre">set_params()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-BrainAlign.code.utils">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">BrainAlign</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">BrainAlign.code.utils package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/BrainAlign.code.utils.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="brainalign-code-utils-package">
+<h1>BrainAlign.code.utils package<a class="headerlink" href="#brainalign-code-utils-package" title="Permalink to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-BrainAlign.code.utils.evaluate">
+<span id="brainalign-code-utils-evaluate-module"></span><h2>BrainAlign.code.utils.evaluate module<a class="headerlink" href="#module-BrainAlign.code.utils.evaluate" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="BrainAlign.code.utils.evaluate.evaluate">
+<span class="sig-prename descclassname"><span class="pre">BrainAlign.code.utils.evaluate.</span></span><span class="sig-name descname"><span class="pre">evaluate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">embeds</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ratio</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idx_train</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idx_val</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idx_test</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nb_classes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isTest</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.code.utils.evaluate.evaluate" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-BrainAlign.code.utils.load_data">
+<span id="brainalign-code-utils-load-data-module"></span><h2>BrainAlign.code.utils.load_data module<a class="headerlink" href="#module-BrainAlign.code.utils.load_data" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="BrainAlign.code.utils.load_data.encode_onehot">
+<span class="sig-prename descclassname"><span class="pre">BrainAlign.code.utils.load_data.</span></span><span class="sig-name descname"><span class="pre">encode_onehot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">labels</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.code.utils.load_data.encode_onehot" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="BrainAlign.code.utils.load_data.load_acm">
+<span class="sig-prename descclassname"><span class="pre">BrainAlign.code.utils.load_data.</span></span><span class="sig-name descname"><span class="pre">load_acm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ratio</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type_num</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.code.utils.load_data.load_acm" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="BrainAlign.code.utils.load_data.load_aminer">
+<span class="sig-prename descclassname"><span class="pre">BrainAlign.code.utils.load_data.</span></span><span class="sig-name descname"><span class="pre">load_aminer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ratio</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type_num</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.code.utils.load_data.load_aminer" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="BrainAlign.code.utils.load_data.load_data">
+<span class="sig-prename descclassname"><span class="pre">BrainAlign.code.utils.load_data.</span></span><span class="sig-name descname"><span class="pre">load_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cfg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ratio</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type_num</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_node</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'S'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.code.utils.load_data.load_data" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="BrainAlign.code.utils.load_data.load_dblp">
+<span class="sig-prename descclassname"><span class="pre">BrainAlign.code.utils.load_data.</span></span><span class="sig-name descname"><span class="pre">load_dblp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ratio</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type_num</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.code.utils.load_data.load_dblp" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="BrainAlign.code.utils.load_data.load_freebase">
+<span class="sig-prename descclassname"><span class="pre">BrainAlign.code.utils.load_data.</span></span><span class="sig-name descname"><span class="pre">load_freebase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ratio</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type_num</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.code.utils.load_data.load_freebase" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="BrainAlign.code.utils.load_data.load_mouse_human">
+<span class="sig-prename descclassname"><span class="pre">BrainAlign.code.utils.load_data.</span></span><span class="sig-name descname"><span class="pre">load_mouse_human</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ratio</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type_num</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'../data/mouse_human/data/'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_node</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'S'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.code.utils.load_data.load_mouse_human" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="BrainAlign.code.utils.load_data.load_mouse_human_binary">
+<span class="sig-prename descclassname"><span class="pre">BrainAlign.code.utils.load_data.</span></span><span class="sig-name descname"><span class="pre">load_mouse_human_binary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ratio</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type_num</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'../data/mouse_human_binary/data/'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_node</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'S'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.code.utils.load_data.load_mouse_human_binary" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="BrainAlign.code.utils.load_data.load_mouse_human_sagittal">
+<span class="sig-prename descclassname"><span class="pre">BrainAlign.code.utils.load_data.</span></span><span class="sig-name descname"><span class="pre">load_mouse_human_sagittal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ratio</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type_num</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'../data/mouse_human_sagittal/data/'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_node</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'S'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.code.utils.load_data.load_mouse_human_sagittal" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="BrainAlign.code.utils.load_data.load_mouse_human_three">
+<span class="sig-prename descclassname"><span class="pre">BrainAlign.code.utils.load_data.</span></span><span class="sig-name descname"><span class="pre">load_mouse_human_three</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ratio</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type_num</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'../data/mouse_human_sagittal/data/'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_node</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'S'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.code.utils.load_data.load_mouse_human_three" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="BrainAlign.code.utils.load_data.normalize_adj">
+<span class="sig-prename descclassname"><span class="pre">BrainAlign.code.utils.load_data.</span></span><span class="sig-name descname"><span class="pre">normalize_adj</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">adj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.code.utils.load_data.normalize_adj" title="Permalink to this definition"></a></dt>
+<dd><p>Symmetrically normalize adjacency matrix.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="BrainAlign.code.utils.load_data.preprocess_features">
+<span class="sig-prename descclassname"><span class="pre">BrainAlign.code.utils.load_data.</span></span><span class="sig-name descname"><span class="pre">preprocess_features</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.code.utils.load_data.preprocess_features" title="Permalink to this definition"></a></dt>
+<dd><p>Row-normalize feature matrix and convert to tuple representation</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="BrainAlign.code.utils.load_data.sparse_mx_to_torch_sparse_tensor">
+<span class="sig-prename descclassname"><span class="pre">BrainAlign.code.utils.load_data.</span></span><span class="sig-name descname"><span class="pre">sparse_mx_to_torch_sparse_tensor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sparse_mx</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.code.utils.load_data.sparse_mx_to_torch_sparse_tensor" title="Permalink to this definition"></a></dt>
+<dd><p>Convert a scipy sparse matrix to a torch sparse tensor.</p>
+</dd></dl>
+
+</section>
+<section id="module-BrainAlign.code.utils.logger">
+<span id="brainalign-code-utils-logger-module"></span><h2>BrainAlign.code.utils.logger module<a class="headerlink" href="#module-BrainAlign.code.utils.logger" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="BrainAlign.code.utils.logger.setup_logger">
+<span class="sig-prename descclassname"><span class="pre">BrainAlign.code.utils.logger.</span></span><span class="sig-name descname"><span class="pre">setup_logger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">if_train</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.code.utils.logger.setup_logger" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-BrainAlign.code.utils.logreg">
+<span id="brainalign-code-utils-logreg-module"></span><h2>BrainAlign.code.utils.logreg module<a class="headerlink" href="#module-BrainAlign.code.utils.logreg" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="BrainAlign.code.utils.logreg.LogReg">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">BrainAlign.code.utils.logreg.</span></span><span class="sig-name descname"><span class="pre">LogReg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ft_in</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nb_classes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.code.utils.logreg.LogReg" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.code.utils.logreg.LogReg.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seq</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.code.utils.logreg.LogReg.forward" title="Permalink to this definition"></a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="BrainAlign.code.utils.logreg.LogReg.training">
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#BrainAlign.code.utils.logreg.LogReg.training" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.code.utils.logreg.LogReg.weights_init">
+<span class="sig-name descname"><span class="pre">weights_init</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">m</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.code.utils.logreg.LogReg.weights_init" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-BrainAlign.code.utils.params">
+<span id="brainalign-code-utils-params-module"></span><h2>BrainAlign.code.utils.params module<a class="headerlink" href="#module-BrainAlign.code.utils.params" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="BrainAlign.code.utils.params.acm_params">
+<span class="sig-prename descclassname"><span class="pre">BrainAlign.code.utils.params.</span></span><span class="sig-name descname"><span class="pre">acm_params</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.code.utils.params.acm_params" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="BrainAlign.code.utils.params.aminer_params">
+<span class="sig-prename descclassname"><span class="pre">BrainAlign.code.utils.params.</span></span><span class="sig-name descname"><span class="pre">aminer_params</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.code.utils.params.aminer_params" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="BrainAlign.code.utils.params.dblp_params">
+<span class="sig-prename descclassname"><span class="pre">BrainAlign.code.utils.params.</span></span><span class="sig-name descname"><span class="pre">dblp_params</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.code.utils.params.dblp_params" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="BrainAlign.code.utils.params.freebase_params">
+<span class="sig-prename descclassname"><span class="pre">BrainAlign.code.utils.params.</span></span><span class="sig-name descname"><span class="pre">freebase_params</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.code.utils.params.freebase_params" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="BrainAlign.code.utils.params.mouse_human_all_binary_params">
+<span class="sig-prename descclassname"><span class="pre">BrainAlign.code.utils.params.</span></span><span class="sig-name descname"><span class="pre">mouse_human_all_binary_params</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.code.utils.params.mouse_human_all_binary_params" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="BrainAlign.code.utils.params.mouse_human_binary_params">
+<span class="sig-prename descclassname"><span class="pre">BrainAlign.code.utils.params.</span></span><span class="sig-name descname"><span class="pre">mouse_human_binary_params</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.code.utils.params.mouse_human_binary_params" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="BrainAlign.code.utils.params.mouse_human_params">
+<span class="sig-prename descclassname"><span class="pre">BrainAlign.code.utils.params.</span></span><span class="sig-name descname"><span class="pre">mouse_human_params</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.code.utils.params.mouse_human_params" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="BrainAlign.code.utils.params.mouse_human_sagittal_params">
+<span class="sig-prename descclassname"><span class="pre">BrainAlign.code.utils.params.</span></span><span class="sig-name descname"><span class="pre">mouse_human_sagittal_params</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.code.utils.params.mouse_human_sagittal_params" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="BrainAlign.code.utils.params.set_params">
+<span class="sig-prename descclassname"><span class="pre">BrainAlign.code.utils.params.</span></span><span class="sig-name descname"><span class="pre">set_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.code.utils.params.set_params" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-BrainAlign.code.utils">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-BrainAlign.code.utils" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Biao Zhang.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

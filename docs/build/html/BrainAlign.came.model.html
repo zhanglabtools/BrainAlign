@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BrainAlign.came.model package &mdash; BrainAlign 0.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            BrainAlign
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">BrainAlign.came.model package</a><ul>
+<li><a class="reference internal" href="#subpackages">Subpackages</a></li>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-BrainAlign.came.model.base_layers">BrainAlign.came.model.base_layers module</a><ul>
+<li><a class="reference internal" href="#BrainAlign.came.model.base_layers.BaseMixConvLayer"><code class="docutils literal notranslate"><span class="pre">BaseMixConvLayer</span></code></a><ul>
+<li><a class="reference internal" href="#BrainAlign.came.model.base_layers.BaseMixConvLayer.apply_out"><code class="docutils literal notranslate"><span class="pre">BaseMixConvLayer.apply_out()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.model.base_layers.BaseMixConvLayer.build_biases"><code class="docutils literal notranslate"><span class="pre">BaseMixConvLayer.build_biases()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.model.base_layers.BaseMixConvLayer.build_layernorm"><code class="docutils literal notranslate"><span class="pre">BaseMixConvLayer.build_layernorm()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.model.base_layers.BaseMixConvLayer.build_mix_conv"><code class="docutils literal notranslate"><span class="pre">BaseMixConvLayer.build_mix_conv()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.model.base_layers.BaseMixConvLayer.forward"><code class="docutils literal notranslate"><span class="pre">BaseMixConvLayer.forward()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.model.base_layers.BaseMixConvLayer.training"><code class="docutils literal notranslate"><span class="pre">BaseMixConvLayer.training</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#BrainAlign.came.model.base_layers.GeneralRGCLayer"><code class="docutils literal notranslate"><span class="pre">GeneralRGCLayer</span></code></a><ul>
+<li><a class="reference internal" href="#BrainAlign.came.model.base_layers.GeneralRGCLayer.forward"><code class="docutils literal notranslate"><span class="pre">GeneralRGCLayer.forward()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.model.base_layers.GeneralRGCLayer.training"><code class="docutils literal notranslate"><span class="pre">GeneralRGCLayer.training</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#BrainAlign.came.model.base_layers.GraphAttentionLayer"><code class="docutils literal notranslate"><span class="pre">GraphAttentionLayer</span></code></a><ul>
+<li><a class="reference internal" href="#BrainAlign.came.model.base_layers.GraphAttentionLayer.forward"><code class="docutils literal notranslate"><span class="pre">GraphAttentionLayer.forward()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.model.base_layers.GraphAttentionLayer.reset_parameters"><code class="docutils literal notranslate"><span class="pre">GraphAttentionLayer.reset_parameters()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.model.base_layers.GraphAttentionLayer.training"><code class="docutils literal notranslate"><span class="pre">GraphAttentionLayer.training</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#BrainAlign.came.model.base_layers.GraphConvLayer"><code class="docutils literal notranslate"><span class="pre">GraphConvLayer</span></code></a><ul>
+<li><a class="reference internal" href="#BrainAlign.came.model.base_layers.GraphConvLayer.weight"><code class="docutils literal notranslate"><span class="pre">GraphConvLayer.weight</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.model.base_layers.GraphConvLayer.bias"><code class="docutils literal notranslate"><span class="pre">GraphConvLayer.bias</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.model.base_layers.GraphConvLayer.extra_repr"><code class="docutils literal notranslate"><span class="pre">GraphConvLayer.extra_repr()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.model.base_layers.GraphConvLayer.forward"><code class="docutils literal notranslate"><span class="pre">GraphConvLayer.forward()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.model.base_layers.GraphConvLayer.reset_parameters"><code class="docutils literal notranslate"><span class="pre">GraphConvLayer.reset_parameters()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.model.base_layers.GraphConvLayer.training"><code class="docutils literal notranslate"><span class="pre">GraphConvLayer.training</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#BrainAlign.came.model.base_layers.HeteroLayerNorm"><code class="docutils literal notranslate"><span class="pre">HeteroLayerNorm</span></code></a><ul>
+<li><a class="reference internal" href="#BrainAlign.came.model.base_layers.HeteroLayerNorm.forward"><code class="docutils literal notranslate"><span class="pre">HeteroLayerNorm.forward()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.model.base_layers.HeteroLayerNorm.training"><code class="docutils literal notranslate"><span class="pre">HeteroLayerNorm.training</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#BrainAlign.came.model.base_layers.RelGraphConvLayer"><code class="docutils literal notranslate"><span class="pre">RelGraphConvLayer</span></code></a><ul>
+<li><a class="reference internal" href="#BrainAlign.came.model.base_layers.RelGraphConvLayer.forward"><code class="docutils literal notranslate"><span class="pre">RelGraphConvLayer.forward()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.model.base_layers.RelGraphConvLayer.training"><code class="docutils literal notranslate"><span class="pre">RelGraphConvLayer.training</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-BrainAlign.came.model.cgc">BrainAlign.came.model.cgc module</a><ul>
+<li><a class="reference internal" href="#BrainAlign.came.model.cgc.CGCNet"><code class="docutils literal notranslate"><span class="pre">CGCNet</span></code></a><ul>
+<li><a class="reference internal" href="#BrainAlign.came.model.cgc.CGCNet.training"><code class="docutils literal notranslate"><span class="pre">CGCNet.training</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#BrainAlign.came.model.cgc.detach2numpy"><code class="docutils literal notranslate"><span class="pre">detach2numpy()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-BrainAlign.came.model.cggc">BrainAlign.came.model.cggc module</a><ul>
+<li><a class="reference internal" href="#BrainAlign.came.model.cggc.CGGCNet"><code class="docutils literal notranslate"><span class="pre">CGGCNet</span></code></a><ul>
+<li><a class="reference internal" href="#BrainAlign.came.model.cggc.CGGCNet.forward"><code class="docutils literal notranslate"><span class="pre">CGGCNet.forward()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.model.cggc.CGGCNet.get_attentions"><code class="docutils literal notranslate"><span class="pre">CGGCNet.get_attentions()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.model.cggc.CGGCNet.get_classification_loss"><code class="docutils literal notranslate"><span class="pre">CGGCNet.get_classification_loss()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.model.cggc.CGGCNet.get_hidden_states"><code class="docutils literal notranslate"><span class="pre">CGGCNet.get_hidden_states()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.model.cggc.CGGCNet.get_out_logits"><code class="docutils literal notranslate"><span class="pre">CGGCNet.get_out_logits()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.model.cggc.CGGCNet.get_sampler"><code class="docutils literal notranslate"><span class="pre">CGGCNet.get_sampler()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.model.cggc.CGGCNet.training"><code class="docutils literal notranslate"><span class="pre">CGGCNet.training</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#BrainAlign.came.model.cggc.detach2numpy"><code class="docutils literal notranslate"><span class="pre">detach2numpy()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-BrainAlign.came.model.heteroframe">BrainAlign.came.model.heteroframe module</a><ul>
+<li><a class="reference internal" href="#BrainAlign.came.model.heteroframe.HeteroGraphConv"><code class="docutils literal notranslate"><span class="pre">HeteroGraphConv</span></code></a><ul>
+<li><a class="reference internal" href="#BrainAlign.came.model.heteroframe.HeteroGraphConv.mods"><code class="docutils literal notranslate"><span class="pre">HeteroGraphConv.mods</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.model.heteroframe.HeteroGraphConv.forward"><code class="docutils literal notranslate"><span class="pre">HeteroGraphConv.forward()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.model.heteroframe.HeteroGraphConv.training"><code class="docutils literal notranslate"><span class="pre">HeteroGraphConv.training</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-BrainAlign.came.model.hidden">BrainAlign.came.model.hidden module</a><ul>
+<li><a class="reference internal" href="#BrainAlign.came.model.hidden.HiddenRGCN"><code class="docutils literal notranslate"><span class="pre">HiddenRGCN</span></code></a><ul>
+<li><a class="reference internal" href="#BrainAlign.came.model.hidden.HiddenRGCN.forward"><code class="docutils literal notranslate"><span class="pre">HiddenRGCN.forward()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.model.hidden.HiddenRGCN.training"><code class="docutils literal notranslate"><span class="pre">HiddenRGCN.training</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#BrainAlign.came.model.hidden.HiddenRRGCN"><code class="docutils literal notranslate"><span class="pre">HiddenRRGCN</span></code></a><ul>
+<li><a class="reference internal" href="#BrainAlign.came.model.hidden.HiddenRRGCN.forward"><code class="docutils literal notranslate"><span class="pre">HiddenRRGCN.forward()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.model.hidden.HiddenRRGCN.training"><code class="docutils literal notranslate"><span class="pre">HiddenRRGCN.training</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-BrainAlign.came.model.loss">BrainAlign.came.model.loss module</a><ul>
+<li><a class="reference internal" href="#BrainAlign.came.model.loss.LabelSmoothingCrossEntropy"><code class="docutils literal notranslate"><span class="pre">LabelSmoothingCrossEntropy</span></code></a><ul>
+<li><a class="reference internal" href="#BrainAlign.came.model.loss.LabelSmoothingCrossEntropy.forward"><code class="docutils literal notranslate"><span class="pre">LabelSmoothingCrossEntropy.forward()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.model.loss.LabelSmoothingCrossEntropy.training"><code class="docutils literal notranslate"><span class="pre">LabelSmoothingCrossEntropy.training</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#BrainAlign.came.model.loss.ce_loss_with_rdrop"><code class="docutils literal notranslate"><span class="pre">ce_loss_with_rdrop()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.model.loss.classification_loss"><code class="docutils literal notranslate"><span class="pre">classification_loss()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.model.loss.compute_kl_loss"><code class="docutils literal notranslate"><span class="pre">compute_kl_loss()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.model.loss.cross_entropy_loss"><code class="docutils literal notranslate"><span class="pre">cross_entropy_loss()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.model.loss.multilabel_binary_cross_entropy"><code class="docutils literal notranslate"><span class="pre">multilabel_binary_cross_entropy()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-BrainAlign.came.model">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">BrainAlign</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">BrainAlign.came.model package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/BrainAlign.came.model.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="brainalign-came-model-package">
+<h1>BrainAlign.came.model package<a class="headerlink" href="#brainalign-came-model-package" title="Permalink to this heading"></a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="BrainAlign.came.model.v0.html">BrainAlign.came.model.v0 package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="BrainAlign.came.model.v0.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BrainAlign.came.model.v0.html#brainalign-came-model-v0-base-layers-module">BrainAlign.came.model.v0.base_layers module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BrainAlign.came.model.v0.html#module-BrainAlign.came.model.v0.cgc">BrainAlign.came.model.v0.cgc module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="BrainAlign.came.model.v0.html#BrainAlign.came.model.v0.cgc.CGCNet"><code class="docutils literal notranslate"><span class="pre">CGCNet</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="BrainAlign.came.model.v0.html#BrainAlign.came.model.v0.cgc.CGCNet.training"><code class="docutils literal notranslate"><span class="pre">CGCNet.training</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="BrainAlign.came.model.v0.html#BrainAlign.came.model.v0.cgc.detach2numpy"><code class="docutils literal notranslate"><span class="pre">detach2numpy()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="BrainAlign.came.model.v0.html#module-BrainAlign.came.model.v0.cggc">BrainAlign.came.model.v0.cggc module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="BrainAlign.came.model.v0.html#BrainAlign.came.model.v0.cggc.CGGCNet"><code class="docutils literal notranslate"><span class="pre">CGGCNet</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="BrainAlign.came.model.v0.html#BrainAlign.came.model.v0.cggc.CGGCNet.forward"><code class="docutils literal notranslate"><span class="pre">CGGCNet.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="BrainAlign.came.model.v0.html#BrainAlign.came.model.v0.cggc.CGGCNet.get_attentions"><code class="docutils literal notranslate"><span class="pre">CGGCNet.get_attentions()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="BrainAlign.came.model.v0.html#BrainAlign.came.model.v0.cggc.CGGCNet.get_classification_loss"><code class="docutils literal notranslate"><span class="pre">CGGCNet.get_classification_loss()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="BrainAlign.came.model.v0.html#BrainAlign.came.model.v0.cggc.CGGCNet.get_hidden_states"><code class="docutils literal notranslate"><span class="pre">CGGCNet.get_hidden_states()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="BrainAlign.came.model.v0.html#BrainAlign.came.model.v0.cggc.CGGCNet.get_out_logits"><code class="docutils literal notranslate"><span class="pre">CGGCNet.get_out_logits()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="BrainAlign.came.model.v0.html#BrainAlign.came.model.v0.cggc.CGGCNet.training"><code class="docutils literal notranslate"><span class="pre">CGGCNet.training</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="BrainAlign.came.model.v0.html#BrainAlign.came.model.v0.cggc.detach2numpy"><code class="docutils literal notranslate"><span class="pre">detach2numpy()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="BrainAlign.came.model.v0.html#module-BrainAlign.came.model.v0.heteroframe">BrainAlign.came.model.v0.heteroframe module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="BrainAlign.came.model.v0.html#BrainAlign.came.model.v0.heteroframe.HeteroGraphConv"><code class="docutils literal notranslate"><span class="pre">HeteroGraphConv</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="BrainAlign.came.model.v0.html#BrainAlign.came.model.v0.heteroframe.HeteroGraphConv.mods"><code class="docutils literal notranslate"><span class="pre">HeteroGraphConv.mods</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="BrainAlign.came.model.v0.html#BrainAlign.came.model.v0.heteroframe.HeteroGraphConv.forward"><code class="docutils literal notranslate"><span class="pre">HeteroGraphConv.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="BrainAlign.came.model.v0.html#BrainAlign.came.model.v0.heteroframe.HeteroGraphConv.training"><code class="docutils literal notranslate"><span class="pre">HeteroGraphConv.training</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="BrainAlign.came.model.v0.html#module-BrainAlign.came.model.v0.hidden">BrainAlign.came.model.v0.hidden module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="BrainAlign.came.model.v0.html#BrainAlign.came.model.v0.hidden.HiddenRGCN"><code class="docutils literal notranslate"><span class="pre">HiddenRGCN</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="BrainAlign.came.model.v0.html#BrainAlign.came.model.v0.hidden.HiddenRGCN.forward"><code class="docutils literal notranslate"><span class="pre">HiddenRGCN.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="BrainAlign.came.model.v0.html#BrainAlign.came.model.v0.hidden.HiddenRGCN.training"><code class="docutils literal notranslate"><span class="pre">HiddenRGCN.training</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="BrainAlign.came.model.v0.html#BrainAlign.came.model.v0.hidden.HiddenRRGCN"><code class="docutils literal notranslate"><span class="pre">HiddenRRGCN</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="BrainAlign.came.model.v0.html#BrainAlign.came.model.v0.hidden.HiddenRRGCN.forward"><code class="docutils literal notranslate"><span class="pre">HiddenRRGCN.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="BrainAlign.came.model.v0.html#BrainAlign.came.model.v0.hidden.HiddenRRGCN.training"><code class="docutils literal notranslate"><span class="pre">HiddenRRGCN.training</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="BrainAlign.came.model.v0.html#module-BrainAlign.came.model.v0.loss">BrainAlign.came.model.v0.loss module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="BrainAlign.came.model.v0.html#BrainAlign.came.model.v0.loss.LabelSmoothingCrossEntropy"><code class="docutils literal notranslate"><span class="pre">LabelSmoothingCrossEntropy</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="BrainAlign.came.model.v0.html#BrainAlign.came.model.v0.loss.LabelSmoothingCrossEntropy.forward"><code class="docutils literal notranslate"><span class="pre">LabelSmoothingCrossEntropy.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="BrainAlign.came.model.v0.html#BrainAlign.came.model.v0.loss.LabelSmoothingCrossEntropy.training"><code class="docutils literal notranslate"><span class="pre">LabelSmoothingCrossEntropy.training</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="BrainAlign.came.model.v0.html#BrainAlign.came.model.v0.loss.ce_loss_with_rdrop"><code class="docutils literal notranslate"><span class="pre">ce_loss_with_rdrop()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BrainAlign.came.model.v0.html#BrainAlign.came.model.v0.loss.classification_loss"><code class="docutils literal notranslate"><span class="pre">classification_loss()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BrainAlign.came.model.v0.html#BrainAlign.came.model.v0.loss.compute_kl_loss"><code class="docutils literal notranslate"><span class="pre">compute_kl_loss()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BrainAlign.came.model.v0.html#BrainAlign.came.model.v0.loss.cross_entropy_loss"><code class="docutils literal notranslate"><span class="pre">cross_entropy_loss()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BrainAlign.came.model.v0.html#BrainAlign.came.model.v0.loss.multilabel_binary_cross_entropy"><code class="docutils literal notranslate"><span class="pre">multilabel_binary_cross_entropy()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="BrainAlign.came.model.v0.html#module-contents">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-BrainAlign.came.model.base_layers">
+<span id="brainalign-came-model-base-layers-module"></span><h2>BrainAlign.came.model.base_layers module<a class="headerlink" href="#module-BrainAlign.came.model.base_layers" title="Permalink to this heading"></a></h2>
+<p>Created on Mon Aug 24 00:30:14 2020</p>
+<p>&#64;author: Xingyan Liu</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="BrainAlign.came.model.base_layers.BaseMixConvLayer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">BrainAlign.came.model.base_layers.</span></span><span class="sig-name descname"><span class="pre">BaseMixConvLayer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">in_dim_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_dim_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mod_kwdicts</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bias</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">activation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">self_loop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layernorm_ntypes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dropout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aggregate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'sum'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.model.base_layers.BaseMixConvLayer" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></p>
+<p>Basic one single layer for (cell-gene) graph convolution</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>in_dim_dict</strong> (<em>dict</em><em>[</em><em>str: int</em><em>]</em>) – Input dimensions for each type of nodes.</p></li>
+<li><p><strong>out_dim_dict</strong> (<em>dict</em><em>[</em><em>str: int</em><em>]</em>) – Output dimensions for each type of nodes.</p></li>
+<li><p><strong>canonical_etypes</strong> (<em>A list</em><em> of </em><em>3-length-tuples:</em><em> (</em><em>ntype_scr</em><em>, </em><em>etype</em><em>, </em><em>ntype_dst</em><em>)</em>) – can be accessed from a <cite>dgl.heterograph.DGLHeteroGraph</cite> object by
+<cite>G.canonical_etypes</cite></p></li>
+</ul>
+</dd>
+</dl>
+<dl>
+<dt>mod_kwdicts: a list of tuples like (etype, kind, kwdict)</dt><dd><p>etype: str, edge-type name.
+kind: str, either of ‘gat’ or ‘gcn’.
+kwdict: dict.</p>
+<blockquote>
+<div><p>parameter dict for GNN model for that edge type. If an empty dict
+{} is given, model will be built using the defaut parameters.</p>
+</div></blockquote>
+</dd>
+<dt>bias: bool, optional</dt><dd><p>True if bias is added. Default: True</p>
+</dd>
+<dt>activation: callable, optional</dt><dd><p>Activation function. Default: None</p>
+</dd>
+</dl>
+<p>layernorm_ntypes: Union[Sequence[str], None]</p>
+<dl class="simple">
+<dt>dropout: float, optional</dt><dd><p>Dropout rate. Default: 0.0</p>
+</dd>
+<dt>aggregate: Union[str, Callable]</dt><dd><p>Aggregation function for reducing messages from different types of relations.
+Default: ‘sum’</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.came.model.base_layers.BaseMixConvLayer.apply_out">
+<span class="sig-name descname"><span class="pre">apply_out</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">h_dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.model.base_layers.BaseMixConvLayer.apply_out" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.came.model.base_layers.BaseMixConvLayer.build_biases">
+<span class="sig-name descname"><span class="pre">build_biases</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.model.base_layers.BaseMixConvLayer.build_biases" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.came.model.base_layers.BaseMixConvLayer.build_layernorm">
+<span class="sig-name descname"><span class="pre">build_layernorm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">layernorm_ntypes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elementwise_affine</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.model.base_layers.BaseMixConvLayer.build_layernorm" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.came.model.base_layers.BaseMixConvLayer.build_mix_conv">
+<span class="sig-name descname"><span class="pre">build_mix_conv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mod_kwdicts</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aggregate</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.model.base_layers.BaseMixConvLayer.build_mix_conv" title="Permalink to this definition"></a></dt>
+<dd><dl>
+<dt>mod_kwdicts: list of tuples, each tuple should be formed as:</dt><dd><p>(canonical_etype, mod_kind, kwdict)</p>
+<p>for example:
+((‘s_ntype’, ‘etype’, ‘d_ntype’), ‘gat’,
+dict(h_dim = 16, n_heads=8, feat_drop=0.05,</p>
+<blockquote>
+<div><p>attn_drop=0.6, negative_slope=0.2,)</p>
+</div></blockquote>
+<p>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.came.model.base_layers.BaseMixConvLayer.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">g</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwds</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.model.base_layers.BaseMixConvLayer.forward" title="Permalink to this definition"></a></dt>
+<dd><p>Forward computation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>g</strong> (<em>DGLHeteroGraph</em>) – Input graph.</p></li>
+<li><p><strong>inputs</strong> (<em>dict</em><em>[</em><em>str</em><em>, </em><em>torch.Tensor</em><em>]</em>) – Node feature for each node type.</p></li>
+<li><p><strong>**kwds</strong> (<em>ignored</em><em>, </em><em>only for compatibility.</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>New node features for each node type.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict[str, torch.Tensor]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="BrainAlign.came.model.base_layers.BaseMixConvLayer.training">
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#BrainAlign.came.model.base_layers.BaseMixConvLayer.training" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="BrainAlign.came.model.base_layers.GeneralRGCLayer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">BrainAlign.came.model.base_layers.</span></span><span class="sig-name descname"><span class="pre">GeneralRGCLayer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">in_dim_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_dim_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">canonical_etypes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'right'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bias</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">activation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">self_loop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batchnorm_ntypes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layernorm_ntypes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dropout_feat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dropout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aggregate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'sum'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.model.base_layers.GeneralRGCLayer" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></p>
+<dl class="simple">
+<dt>A variant of the Relational graph convolution (RGCN) layer,</dt><dd><p>allowing different number dimensions for each node-type.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>in_dim_dict</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>Mapping</em><em>[</em><em>str</em><em>, </em><em>int</em><em>]</em><em>]</em>) – Input dimensions for each node-type</p></li>
+<li><p><strong>out_dim_dict</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>Mapping</em><em>[</em><em>str</em><em>, </em><em>int</em><em>]</em><em>]</em>) – Input dimensions for each node-type</p></li>
+<li><p><strong>canonical_etypes</strong> (<em>A list</em><em> of </em><em>3-length-tuples:</em><em> (</em><em>ntype_scr</em><em>, </em><em>etype</em><em>, </em><em>ntype_dst</em><em>)</em>) – can be accessed from a <cite>dgl.heterograph.DGLHeteroGraph</cite> object by
+<cite>G.canonical_etypes</cite></p></li>
+<li><p><strong>norm</strong> (<em>str</em>) – one of ‘right’, ‘left’, ‘both’, ‘none’</p></li>
+<li><p><strong>use_weight</strong> (<em>bool</em><em> or </em><em>list</em><em>[</em><em>str</em><em>]</em><em>, </em><em>optional.</em>) – True if a linear layer is applied after message passing. Default: True</p></li>
+<li><p><strong>bias</strong> (<em>bool</em><em>, </em><em>optional</em>) – True if bias is added. Default: True</p></li>
+<li><p><strong>activation</strong> (<em>callable</em><em>, </em><em>optional</em>) – Activation function. Default: None</p></li>
+<li><p><strong>layernorm_ntypes</strong> (<em>Union</em><em>[</em><em>Sequence</em><em>[</em><em>str</em><em>]</em><em>, </em><em>None</em><em>]</em>) – </p></li>
+<li><p><strong>dropout</strong> (<em>float</em><em>, </em><em>optional</em>) – Dropout rate. Default: 0.0</p></li>
+<li><p><strong>aggregate</strong> (<em>Union</em><em>[</em><em>str</em><em>, </em><em>Callable</em><em>]</em>) – Aggregation function for reducing messages from different types of relations.
+Default: ‘sum’</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.came.model.base_layers.GeneralRGCLayer.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">g</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inputs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">etypes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bias</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">activate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">static_wdict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.model.base_layers.GeneralRGCLayer.forward" title="Permalink to this definition"></a></dt>
+<dd><p>(GeneralRGCLayer, modified <cite>RelGraphConvLayer</cite>)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>g</strong> (<em>DGLHeteroGraph</em>) – Input graph.</p></li>
+<li><p><strong>inputs</strong> (<em>dict</em><em>[</em><em>str</em><em>, </em><em>torch.Tensor</em><em>]</em>) – Node feature for each node type.</p></li>
+<li><p><strong>etypes</strong> (<em>None</em><em>, </em><em>list</em><em>[</em><em>str</em><em>]</em>) – if provided, it can be used to subset the edge-types of the graph.</p></li>
+<li><p><strong>static_wdict</strong> (<em>dict</em><em>[</em><em>str</em><em>, </em><em>torch.Tensor</em><em>]</em><em>, </em><em>optional</em>) – etype –&gt; <cite>w</cite> of shape (n_edges, )
+Optional external weight tensor, this can be the intrinsic weights
+of the graph, and is NOT trainable. (for <cite>GraphConvLayer.forward</cite>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>New node features for each node type.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict[str, torch.Tensor]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="BrainAlign.came.model.base_layers.GeneralRGCLayer.training">
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#BrainAlign.came.model.base_layers.GeneralRGCLayer.training" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="BrainAlign.came.model.base_layers.GraphAttentionLayer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">BrainAlign.came.model.base_layers.</span></span><span class="sig-name descname"><span class="pre">GraphAttentionLayer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">in_dim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_dim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_heads</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feat_drop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attn_drop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">negative_slope</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">residual</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">activation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attn_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'mul'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">heads_fuse</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.model.base_layers.GraphAttentionLayer" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></p>
+<p>Modified version of <cite>dgl.nn.GATConv</cite>
+* message passing with attentions.
+* directed and asymmetric message passing, allowing different dimensions</p>
+<blockquote>
+<div><p>of source and destination node-features.</p>
+</div></blockquote>
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.came.model.base_layers.GraphAttentionLayer.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">g</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_attn</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.model.base_layers.GraphAttentionLayer.forward" title="Permalink to this definition"></a></dt>
+<dd><p>Compute graph attention network layer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>g</strong> (<em>DGLGraph</em>) – The graph.</p></li>
+<li><p><strong>feat</strong> (<em>torch.Tensor</em><em> or </em><em>a pair</em><em> of </em><em>torch.Tensor</em>) – If a torch.Tensor is given, the input feature of shape <span class="math notranslate nohighlight">\((N, D_{in})\)</span> where
+<span class="math notranslate nohighlight">\(D_{in}\)</span> is size of input feature, <span class="math notranslate nohighlight">\(N\)</span> is the number of nodes.
+If a pair of torch.Tensor is given, the pair must contain two tensors of shape
+<span class="math notranslate nohighlight">\((N_{in}, D_{in_{src}})\)</span> and <span class="math notranslate nohighlight">\((N_{out}, D_{in_{dst}})\)</span>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The output feature of shape <span class="math notranslate nohighlight">\((N, H, D_{out})\)</span> where <span class="math notranslate nohighlight">\(H\)</span>
+is the number of heads, and <span class="math notranslate nohighlight">\(D_{out}\)</span> is size of output feature.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>torch.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.came.model.base_layers.GraphAttentionLayer.reset_parameters">
+<span class="sig-name descname"><span class="pre">reset_parameters</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.model.base_layers.GraphAttentionLayer.reset_parameters" title="Permalink to this definition"></a></dt>
+<dd><p>Reinitialize learnable parameters.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="BrainAlign.came.model.base_layers.GraphAttentionLayer.training">
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#BrainAlign.came.model.base_layers.GraphAttentionLayer.training" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="BrainAlign.came.model.base_layers.GraphConvLayer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">BrainAlign.came.model.base_layers.</span></span><span class="sig-name descname"><span class="pre">GraphConvLayer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">in_dim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_dim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'left'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bias</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">activation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.model.base_layers.GraphConvLayer" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></p>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>similar to <cite>dgl.nn.GraphConv</cite>, while normalization can be ‘left’, which</dt><dd><p>is not allowed in <cite>dgl.nn.GraphConv</cite>.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>directed and asymmetric message passing, allowing different dimensions</dt><dd><p>of source and destination node-features.</p>
+</dd>
+</dl>
+</li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>in_dim</strong> (<em>int</em>) – Input feature size.</p></li>
+<li><p><strong>out_dim</strong> (<em>int</em>) – Output feature size.</p></li>
+<li><p><strong>norm</strong> (<em>str</em><em>, </em><em>optional</em>) – How to apply the normalizer. If is <cite>‘right’</cite>, divide the aggregated messages
+by each node’s in-degrees, which is equivalent to averaging the received messages.
+If is <cite>‘none’</cite>, no normalization is applied. Default is <cite>‘both’</cite>,
+where the <span class="math notranslate nohighlight">\(c_{ij}\)</span> in the paper is applied.</p></li>
+<li><p><strong>weight</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, apply a linear layer. Otherwise, aggregating the messages
+without a weight matrix.</p></li>
+<li><p><strong>bias</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, adds a learnable bias to the output. Default: <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+<li><p><strong>activation</strong> (<em>callable activation function/layer</em><em> or </em><em>None</em><em>, </em><em>optional</em>) – If not None, applies an activation function to the updated node features.
+Default: <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="BrainAlign.came.model.base_layers.GraphConvLayer.weight">
+<span class="sig-name descname"><span class="pre">weight</span></span><a class="headerlink" href="#BrainAlign.came.model.base_layers.GraphConvLayer.weight" title="Permalink to this definition"></a></dt>
+<dd><p>The learnable weight tensor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>torch.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="BrainAlign.came.model.base_layers.GraphConvLayer.bias">
+<span class="sig-name descname"><span class="pre">bias</span></span><a class="headerlink" href="#BrainAlign.came.model.base_layers.GraphConvLayer.bias" title="Permalink to this definition"></a></dt>
+<dd><p>The learnable bias tensor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>torch.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.came.model.base_layers.GraphConvLayer.extra_repr">
+<span class="sig-name descname"><span class="pre">extra_repr</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.model.base_layers.GraphConvLayer.extra_repr" title="Permalink to this definition"></a></dt>
+<dd><p>Set the extra representation of the module,
+which will come into effect when printing the model.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.came.model.base_layers.GraphConvLayer.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">g</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">static_weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.model.base_layers.GraphConvLayer.forward" title="Permalink to this definition"></a></dt>
+<dd><p>(modified GCN)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>g</strong> (<em>DGLGraph</em>) – The graph.</p></li>
+<li><p><strong>feat</strong> (<em>torch.Tensor</em>) – The input feature</p></li>
+<li><p><strong>weight</strong> (<em>torch.Tensor</em><em>, </em><em>optional</em>) – Optional external weight tensor.</p></li>
+<li><p><strong>static_weight</strong> (<em>torch.Tensor</em><em> of </em><em>shape</em><em> (</em><em>n_edges</em><em>, </em><em>)</em><em>, </em><em>optional</em>) – Optional external weight tensor, this can be the intrinsic weights
+of the graph, and is NOT trainable.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The output feature</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>torch.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.came.model.base_layers.GraphConvLayer.reset_parameters">
+<span class="sig-name descname"><span class="pre">reset_parameters</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.model.base_layers.GraphConvLayer.reset_parameters" title="Permalink to this definition"></a></dt>
+<dd><p>Reinitialize learnable parameters.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="BrainAlign.came.model.base_layers.GraphConvLayer.training">
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#BrainAlign.came.model.base_layers.GraphConvLayer.training" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="BrainAlign.came.model.base_layers.HeteroLayerNorm">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">BrainAlign.came.model.base_layers.</span></span><span class="sig-name descname"><span class="pre">HeteroLayerNorm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">in_dim_dict</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwds</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.model.base_layers.HeteroLayerNorm" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></p>
+<p>LayerNorm for different type of nodes</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.came.model.base_layers.HeteroLayerNorm.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">h_dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.model.base_layers.HeteroLayerNorm.forward" title="Permalink to this definition"></a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="BrainAlign.came.model.base_layers.HeteroLayerNorm.training">
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#BrainAlign.came.model.base_layers.HeteroLayerNorm.training" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="BrainAlign.came.model.base_layers.RelGraphConvLayer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">BrainAlign.came.model.base_layers.</span></span><span class="sig-name descname"><span class="pre">RelGraphConvLayer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">in_dim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_dim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rel_names</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'right'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bias</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">activation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">self_loop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layernorm_ntypes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dropout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aggregate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'sum'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.model.base_layers.RelGraphConvLayer" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></p>
+<p>Relational graph convolution layer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>in_dim</strong> (<em>int</em>) – Input feature size.</p></li>
+<li><p><strong>out_dim</strong> (<em>int</em>) – Output feature size.</p></li>
+<li><p><strong>rel_names</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – Relation names.</p></li>
+<li><p><strong>num_bases</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of bases. If is none, use number of relations. Default: None.</p></li>
+<li><p><strong>use_weight</strong> (<em>bool</em><em> or </em><em>list</em><em>[</em><em>str</em><em>]</em><em>, </em><em>optional</em>) – True if a linear layer is applied after message passing. Default: True</p></li>
+<li><p><strong>bias</strong> (<em>bool</em><em>, </em><em>optional</em>) – True if bias is added. Default: True</p></li>
+<li><p><strong>activation</strong> (<em>callable</em><em>, </em><em>optional</em>) – Activation function. Default: None</p></li>
+<li><p><strong>self_loop</strong> (<em>bool</em><em>, </em><em>optional</em>) – True to include self loop message. Default: False</p></li>
+<li><p><strong>dropout</strong> (<em>float</em><em>, </em><em>optional</em>) – Dropout rate. Default: 0.0</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.came.model.base_layers.RelGraphConvLayer.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">g</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">etypes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.model.base_layers.RelGraphConvLayer.forward" title="Permalink to this definition"></a></dt>
+<dd><p>Forward computation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>g</strong> (<em>DGLHeteroGraph</em>) – Input graph.</p></li>
+<li><p><strong>inputs</strong> (<em>dict</em><em>[</em><em>str</em><em>, </em><em>torch.Tensor</em><em>]</em>) – Node feature for each node type.</p></li>
+<li><p><strong>etypes</strong> (<em>None</em><em>, </em><em>list</em><em>[</em><em>str</em><em>]</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>New node features for each node type.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict[str, torch.Tensor]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="BrainAlign.came.model.base_layers.RelGraphConvLayer.training">
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#BrainAlign.came.model.base_layers.RelGraphConvLayer.training" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-BrainAlign.came.model.cgc">
+<span id="brainalign-came-model-cgc-module"></span><h2>BrainAlign.came.model.cgc module<a class="headerlink" href="#module-BrainAlign.came.model.cgc" title="Permalink to this heading"></a></h2>
+<p>Created on Tue Mar 16 14:11:14 2021</p>
+<p>&#64;author: Xingyan Liu</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="BrainAlign.came.model.cgc.CGCNet">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">BrainAlign.came.model.cgc.</span></span><span class="sig-name descname"><span class="pre">CGCNet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.model.cgc.CGCNet" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#BrainAlign.came.model.cggc.CGGCNet" title="BrainAlign.came.model.cggc.CGGCNet"><code class="xref py py-class docutils literal notranslate"><span class="pre">CGGCNet</span></code></a></p>
+<p>Cell-Gene-Cell graph neural network (used when features are 1-to-1 aligned)</p>
+<p>Graph Convolutional Network for cell-gene Heterogeneous graph,
+with edges named as:</p>
+<ul class="simple">
+<li><p>(‘cell’, ‘express’, ‘gene’):        ov_adj</p></li>
+<li><p>(‘gene’, ‘expressed_by’, ‘cell’):   ov_adj.T</p></li>
+<li><p>(‘cell’, ‘self_loop_cell’, ‘cell’): sparse.eye(n_cells)</p></li>
+</ul>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>gene embeddings are computed from cells;</p></li>
+<li><p>weight sharing across hidden layers is allowed by setting
+<code class="docutils literal notranslate"><span class="pre">share_hidden_weights</span></code> as <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+<li><p>attention can be applied on the last layer (<cite>self.cell_classifier</cite>);</p></li>
+<li><p>the graph for the embedding layer and the hidden layers can be different.</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>g_or_canonical_etypes</strong> (<em>dgl.DGLGraph</em><em> or </em><em>a list</em><em> of </em><em>3-length-tuples</em>) – if provide a list of tuples, each of the tuples should be like
+<code class="docutils literal notranslate"><span class="pre">(node_type_source,</span> <span class="pre">edge_type,</span> <span class="pre">node_type_destination)</span></code>.</p></li>
+<li><p><strong>in_dim_dict</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>int</em><em>]</em>) – Input dimensions for each node-type</p></li>
+<li><p><strong>h_dim</strong> (<em>int</em>) – number of dimensions of the hidden states</p></li>
+<li><p><strong>h_dim_add</strong> (<em>Optional</em><em>[</em><em>int</em><em> or </em><em>Tuple</em><em>]</em>) – if provided, an extra hidden layer will be add before the classifier</p></li>
+<li><p><strong>out_dim</strong> (<em>int</em>) – number of classes (e.g., cell types)</p></li>
+<li><p><strong>num_hidden_layers</strong> (<em>int</em>) – number of hidden layers</p></li>
+<li><p><strong>norm</strong> (<em>str</em>) – normalization method for message aggregation, should be one of
+{‘none’, ‘both’, ‘right’, ‘left’} (Default: ‘right’)</p></li>
+<li><p><strong>use_weight</strong> (<em>bool</em>) – True if a linear layer is applied after message passing. Default: True</p></li>
+<li><p><strong>dropout_feat</strong> (<em>float</em>) – dropout-rate for the input layer</p></li>
+<li><p><strong>dropout</strong> (<em>float</em>) – dropout-rate for the hidden layer</p></li>
+<li><p><strong>negative_slope</strong> (<em>float</em>) – negative slope for <code class="docutils literal notranslate"><span class="pre">LeakyReLU</span></code></p></li>
+<li><p><strong>batchnorm_ntypes</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – specify the node types to apply BatchNorm (Default: None)</p></li>
+<li><p><strong>layernorm_ntypes</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – specify the node types to apply <code class="docutils literal notranslate"><span class="pre">LayerNorm</span></code></p></li>
+<li><p><strong>out_bias</strong> (<em>bool</em>) – whether to use the bias on the output classifier</p></li>
+<li><p><strong>rel_names_out</strong> (<em>a list</em><em> of </em><em>tuples</em><em> or </em><em>strings</em>) – names of the output relations; if not provided, use all the relations
+of the graph.</p></li>
+<li><p><strong>share_hidden_weights</strong> (<em>bool</em>) – whether to share the graph-convolutional weights across hidden layers</p></li>
+<li><p><strong>attn_out</strong> (<em>bool</em>) – whether to use attentions on the output layer</p></li>
+<li><p><strong>kwdict_outgat</strong> (<em>Dict</em>) – a dict of key-word parameters for the output graph-attention layers</p></li>
+<li><p><strong>share_layernorm</strong> (<em>bool</em>) – whether to share the LayerNorm across hidden layers</p></li>
+<li><p><strong>residual</strong> (<em>bool</em>) – whether to use the residual connection between the embedding layer and
+the last hidden layer. This operation may NOT be helpful in
+transfer-learning scenario. (Default: False)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><code class="xref py py-obj docutils literal notranslate"><span class="pre">CGGCNet</span></code></p>
+</div>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="BrainAlign.came.model.cgc.CGCNet.training">
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#BrainAlign.came.model.cgc.CGCNet.training" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="BrainAlign.came.model.cgc.detach2numpy">
+<span class="sig-prename descclassname"><span class="pre">BrainAlign.came.model.cgc.</span></span><span class="sig-name descname"><span class="pre">detach2numpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.model.cgc.detach2numpy" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-BrainAlign.came.model.cggc">
+<span id="brainalign-came-model-cggc-module"></span><h2>BrainAlign.came.model.cggc module<a class="headerlink" href="#module-BrainAlign.came.model.cggc" title="Permalink to this heading"></a></h2>
+<p>Created on Sat Mar 20 18:59:29 2021</p>
+<p>&#64;author: Xingyan Liu</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="BrainAlign.came.model.cggc.CGGCNet">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">BrainAlign.came.model.cggc.</span></span><span class="sig-name descname"><span class="pre">CGGCNet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">g_or_canonical_etypes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DGLHeteroGraph</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">in_dim_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h_dim</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">32</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h_dim_add</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_dim</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">32</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_hidden_layers</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norm</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'right'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_weight</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dropout_feat</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dropout</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">negative_slope</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.05</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batchnorm_ntypes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layernorm_ntypes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_bias</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rel_names_out</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">share_hidden_weights</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attn_out</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwdict_outgat</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">share_layernorm</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">residual</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwds</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.model.cggc.CGGCNet" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></p>
+<p>Cell-Gene-Gene-Cell graph neural network.</p>
+<p>Graph Convolutional Network for cell-gene Heterogeneous graph,
+with edges named as:</p>
+<ul class="simple">
+<li><p>(‘cell’, ‘express’, ‘gene’):           ov_adj</p></li>
+<li><p>(‘gene’, ‘expressed_by’, ‘cell’):      ov_adj.T</p></li>
+<li><p>(‘gene’, ‘homolog_with’, ‘gene’):      vv_adj + sparse.eye(n_gnodes)</p></li>
+<li><p>(‘cell’, ‘self_loop_cell’, ‘cell’):    sparse.eye(n_cells)</p></li>
+</ul>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>gene embeddings are computed from cells;</p></li>
+<li><p>weight sharing across hidden layers is allowed by setting
+<code class="docutils literal notranslate"><span class="pre">share_hidden_weights</span></code> as <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+<li><p>attention can be applied on the last layer (<cite>self.cell_classifier</cite>);</p></li>
+<li><p>the graph for the embedding layer and the hidden layers can be different;</p></li>
+<li><p>allow expression values as static edge weights. (but seems not work…)</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>g_or_canonical_etypes</strong> (<em>dgl.DGLGraph</em><em> or </em><em>a list</em><em> of </em><em>3-length-tuples</em>) – if provide a list of tuples, each of the tuples should be like
+<code class="docutils literal notranslate"><span class="pre">(node_type_source,</span> <span class="pre">edge_type,</span> <span class="pre">node_type_destination)</span></code>.</p></li>
+<li><p><strong>in_dim_dict</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>int</em><em>]</em>) – Input dimensions for each node-type</p></li>
+<li><p><strong>h_dim</strong> (<em>int</em>) – number of dimensions of the hidden states</p></li>
+<li><p><strong>h_dim_add</strong> (<em>Optional</em><em>[</em><em>int</em><em> or </em><em>Tuple</em><em>]</em>) – if provided, an extra hidden layer will be add before the classifier</p></li>
+<li><p><strong>out_dim</strong> (<em>int</em>) – number of classes (e.g., cell types)</p></li>
+<li><p><strong>num_hidden_layers</strong> (<em>int</em>) – number of hidden layers</p></li>
+<li><p><strong>norm</strong> (<em>str</em>) – normalization method for message aggregation, should be one of
+{‘none’, ‘both’, ‘right’, ‘left’} (Default: ‘right’)</p></li>
+<li><p><strong>use_weight</strong> (<em>bool</em>) – True if a linear layer is applied after message passing. Default: True</p></li>
+<li><p><strong>dropout_feat</strong> (<em>float</em>) – dropout-rate for the input layer</p></li>
+<li><p><strong>dropout</strong> (<em>float</em>) – dropout-rate for the hidden layer</p></li>
+<li><p><strong>negative_slope</strong> (<em>float</em>) – negative slope for <code class="docutils literal notranslate"><span class="pre">LeakyReLU</span></code></p></li>
+<li><p><strong>batchnorm_ntypes</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – specify the node types to apply BatchNorm (Default: None)</p></li>
+<li><p><strong>layernorm_ntypes</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – specify the node types to apply <code class="docutils literal notranslate"><span class="pre">LayerNorm</span></code></p></li>
+<li><p><strong>out_bias</strong> (<em>bool</em>) – whether to use the bias on the output classifier</p></li>
+<li><p><strong>rel_names_out</strong> (<em>a list</em><em> of </em><em>tuples</em><em> or </em><em>strings</em>) – names of the output relations; if not provided, use all the relations
+of the graph.</p></li>
+<li><p><strong>share_hidden_weights</strong> (<em>bool</em>) – whether to share the graph-convolutional weights across hidden layers</p></li>
+<li><p><strong>attn_out</strong> (<em>bool</em>) – whether to use attentions on the output layer</p></li>
+<li><p><strong>kwdict_outgat</strong> (<em>Dict</em>) – a dict of key-word parameters for the output graph-attention layers</p></li>
+<li><p><strong>share_layernorm</strong> (<em>bool</em>) – whether to share the LayerNorm across hidden layers</p></li>
+<li><p><strong>residual</strong> (<em>bool</em>) – whether to use the residual connection between the embedding layer and
+the last hidden layer. This operation may NOT be helpful in
+transfer-learning scenario. (Default: False)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><code class="xref py py-obj docutils literal notranslate"><span class="pre">HiddenRRGCN</span></code></p>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.came.model.cggc.CGGCNet.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feat_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">g</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">other_inputs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.model.cggc.CGGCNet.forward" title="Permalink to this definition"></a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.came.model.cggc.CGGCNet.get_attentions">
+<span class="sig-name descname"><span class="pre">get_attentions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feat_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">g</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fuse</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'mean'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.model.cggc.CGGCNet.get_attentions" title="Permalink to this definition"></a></dt>
+<dd><p>output a cell-by-gene attention matrix</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.came.model.cggc.CGGCNet.get_classification_loss">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_classification_loss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">out_cell</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">smooth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">smooth_eps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">smooth_reduction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'mean'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.model.cggc.CGGCNet.get_classification_loss" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.came.model.cggc.CGGCNet.get_hidden_states">
+<span class="sig-name descname"><span class="pre">get_hidden_states</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feat_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">g</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">i_layer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">detach2np</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">other_inputs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.model.cggc.CGGCNet.get_hidden_states" title="Permalink to this definition"></a></dt>
+<dd><p>access the hidden states.
+detach2np: whether tensors be detached and transformed into numpy.ndarray</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.came.model.cggc.CGGCNet.get_out_logits">
+<span class="sig-name descname"><span class="pre">get_out_logits</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feat_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">g</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">other_inputs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.model.cggc.CGGCNet.get_out_logits" title="Permalink to this definition"></a></dt>
+<dd><p>get the output logits</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.came.model.cggc.CGGCNet.get_sampler">
+<span class="sig-name descname"><span class="pre">get_sampler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">canonical_etypes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k_each_etype</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">dict</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">50</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fanouts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.model.cggc.CGGCNet.get_sampler" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="BrainAlign.came.model.cggc.CGGCNet.training">
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#BrainAlign.came.model.cggc.CGGCNet.training" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="BrainAlign.came.model.cggc.detach2numpy">
+<span class="sig-prename descclassname"><span class="pre">BrainAlign.came.model.cggc.</span></span><span class="sig-name descname"><span class="pre">detach2numpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.model.cggc.detach2numpy" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-BrainAlign.came.model.heteroframe">
+<span id="brainalign-came-model-heteroframe-module"></span><h2>BrainAlign.came.model.heteroframe module<a class="headerlink" href="#module-BrainAlign.came.model.heteroframe" title="Permalink to this heading"></a></h2>
+<p>Heterograph NN modules</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="BrainAlign.came.model.heteroframe.HeteroGraphConv">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">BrainAlign.came.model.heteroframe.</span></span><span class="sig-name descname"><span class="pre">HeteroGraphConv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mods</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aggregate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'sum'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.model.heteroframe.HeteroGraphConv" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></p>
+<p>A generic module for computing convolution on heterogeneous graphs.</p>
+<p>The heterograph convolution applies sub-modules on their associating
+relation graphs, which reads the features from source nodes and writes the
+updated ones to destination nodes. If multiple relations have the same
+destination node types, their results are aggregated by the specified method.</p>
+<p>If the relation graph has no edge, the corresponding module will not be called.</p>
+<p class="rubric">Examples</p>
+<p>Create a heterograph with three types of relations and nodes.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">dgl</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g</span> <span class="o">=</span> <span class="n">dgl</span><span class="o">.</span><span class="n">heterograph</span><span class="p">({</span>
+<span class="gp">... </span>    <span class="p">(</span><span class="s1">&#39;user&#39;</span><span class="p">,</span> <span class="s1">&#39;follows&#39;</span><span class="p">,</span> <span class="s1">&#39;user&#39;</span><span class="p">)</span> <span class="p">:</span> <span class="n">edges1</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="p">(</span><span class="s1">&#39;user&#39;</span><span class="p">,</span> <span class="s1">&#39;plays&#39;</span><span class="p">,</span> <span class="s1">&#39;game&#39;</span><span class="p">)</span> <span class="p">:</span> <span class="n">edges2</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="p">(</span><span class="s1">&#39;store&#39;</span><span class="p">,</span> <span class="s1">&#39;sells&#39;</span><span class="p">,</span> <span class="s1">&#39;game&#39;</span><span class="p">)</span>  <span class="p">:</span> <span class="n">edges3</span><span class="p">})</span>
+</pre></div>
+</div>
+<p>Create a <code class="docutils literal notranslate"><span class="pre">HeteroGraphConv</span></code> that applies different convolution modules to
+different relations. Note that the modules for <code class="docutils literal notranslate"><span class="pre">'follows'</span></code> and <code class="docutils literal notranslate"><span class="pre">'plays'</span></code>
+do not share weights.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">dgl.nn.pytorch</span> <span class="k">as</span> <span class="nn">dglnn</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">conv</span> <span class="o">=</span> <span class="n">dglnn</span><span class="o">.</span><span class="n">HeteroGraphConv</span><span class="p">({</span>
+<span class="gp">... </span>    <span class="s1">&#39;follows&#39;</span> <span class="p">:</span> <span class="n">dglnn</span><span class="o">.</span><span class="n">GraphConv</span><span class="p">(</span><span class="o">...</span><span class="p">),</span>
+<span class="gp">... </span>    <span class="s1">&#39;plays&#39;</span> <span class="p">:</span> <span class="n">dglnn</span><span class="o">.</span><span class="n">GraphConv</span><span class="p">(</span><span class="o">...</span><span class="p">),</span>
+<span class="gp">... </span>    <span class="s1">&#39;sells&#39;</span> <span class="p">:</span> <span class="n">dglnn</span><span class="o">.</span><span class="n">SAGEConv</span><span class="p">(</span><span class="o">...</span><span class="p">)},</span>
+<span class="gp">... </span>    <span class="n">aggregate</span><span class="o">=</span><span class="s1">&#39;sum&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Call forward with some <code class="docutils literal notranslate"><span class="pre">'user'</span></code> features. This computes new features for both
+<code class="docutils literal notranslate"><span class="pre">'user'</span></code> and <code class="docutils literal notranslate"><span class="pre">'game'</span></code> nodes.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">torch</span> <span class="k">as</span> <span class="nn">th</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">h1</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;user&#39;</span> <span class="p">:</span> <span class="n">th</span><span class="o">.</span><span class="n">randn</span><span class="p">((</span><span class="n">g</span><span class="o">.</span><span class="n">number_of_nodes</span><span class="p">(</span><span class="s1">&#39;user&#39;</span><span class="p">),</span> <span class="mi">5</span><span class="p">))}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">h2</span> <span class="o">=</span> <span class="n">conv</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">h1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">h2</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<span class="go">dict_keys([&#39;user&#39;, &#39;game&#39;])</span>
+</pre></div>
+</div>
+<p>Call forward with both <code class="docutils literal notranslate"><span class="pre">'user'</span></code> and <code class="docutils literal notranslate"><span class="pre">'store'</span></code> features. Because both the
+<code class="docutils literal notranslate"><span class="pre">'plays'</span></code> and <code class="docutils literal notranslate"><span class="pre">'sells'</span></code> relations will update the <code class="docutils literal notranslate"><span class="pre">'game'</span></code> features,
+their results are aggregated by the specified method (i.e., summation here).</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f1</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;user&#39;</span> <span class="p">:</span> <span class="o">...</span><span class="p">,</span> <span class="s1">&#39;store&#39;</span> <span class="p">:</span> <span class="o">...</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f2</span> <span class="o">=</span> <span class="n">conv</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">f1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">f2</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<span class="go">dict_keys([&#39;user&#39;, &#39;game&#39;])</span>
+</pre></div>
+</div>
+<p>Call forward with some <code class="docutils literal notranslate"><span class="pre">'store'</span></code> features. This only computes new features
+for <code class="docutils literal notranslate"><span class="pre">'game'</span></code> nodes.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">g1</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;store&#39;</span> <span class="p">:</span> <span class="o">...</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g2</span> <span class="o">=</span> <span class="n">conv</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">g1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">g2</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<span class="go">dict_keys([&#39;game&#39;])</span>
+</pre></div>
+</div>
+<p>Call forward with a pair of inputs is allowed and each submodule will also
+be invoked with a pair of inputs.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x_src</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;user&#39;</span> <span class="p">:</span> <span class="o">...</span><span class="p">,</span> <span class="s1">&#39;store&#39;</span> <span class="p">:</span> <span class="o">...</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x_dst</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;user&#39;</span> <span class="p">:</span> <span class="o">...</span><span class="p">,</span> <span class="s1">&#39;game&#39;</span> <span class="p">:</span> <span class="o">...</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y_dst</span> <span class="o">=</span> <span class="n">conv</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="p">(</span><span class="n">x_src</span><span class="p">,</span> <span class="n">x_dst</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">y_dst</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<span class="go">dict_keys([&#39;user&#39;, &#39;game&#39;])</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mods</strong> (<em>dict</em><em>[</em><em>str</em><em>, </em><em>nn.Module</em><em>]</em>) – Modules associated with every edge types. The forward function of each
+module must have a <cite>DGLHeteroGraph</cite> object as the first argument, and
+its second argument is either a tensor object representing the node
+features or a pair of tensor object representing the source and destination
+node features.</p></li>
+<li><p><strong>aggregate</strong> (<em>str</em><em>, </em><em>callable</em><em>, </em><em>optional</em>) – <p>Method for aggregating node features generated by different relations.
+Allowed string values are ‘sum’, ‘max’, ‘min’, ‘mean’, ‘stack’.
+The ‘stack’ aggregation is performed along the second dimension, whose order
+is deterministic.
+User can also customize the aggregator by providing a callable instance.
+For example, aggregation by summation is equivalent to the follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">my_agg_func</span><span class="p">(</span><span class="n">tensors</span><span class="p">,</span> <span class="n">dsttype</span><span class="p">):</span>
+    <span class="c1"># tensors: is a list of tensors to aggregate</span>
+    <span class="c1"># dsttype: string name of the destination node type for which the</span>
+    <span class="c1">#          aggregation is performed</span>
+    <span class="n">stacked</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">stack</span><span class="p">(</span><span class="n">tensors</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">stacked</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="BrainAlign.came.model.heteroframe.HeteroGraphConv.mods">
+<span class="sig-name descname"><span class="pre">mods</span></span><a class="headerlink" href="#BrainAlign.came.model.heteroframe.HeteroGraphConv.mods" title="Permalink to this definition"></a></dt>
+<dd><p>Modules associated with every edge types.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict[str, nn.Module]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.came.model.heteroframe.HeteroGraphConv.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">g</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">etypes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mod_args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mod_kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.model.heteroframe.HeteroGraphConv.forward" title="Permalink to this definition"></a></dt>
+<dd><p>Forward computation</p>
+<p>Invoke the forward function with each module and aggregate their results.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>g</strong> (<em>DGLHeteroGraph</em>) – Graph data.</p></li>
+<li><p><strong>inputs</strong> (<em>dict</em><em>[</em><em>str</em><em>, </em><em>Tensor</em><em>] or </em><em>pair</em><em> of </em><em>dict</em><em>[</em><em>str</em><em>, </em><em>Tensor</em><em>]</em>) – Input node features.</p></li>
+<li><p><strong>mod_args</strong> (<em>dict</em><em>[</em><em>str</em><em>, </em><em>tuple</em><em>[</em><em>any</em><em>]</em><em>]</em><em>, </em><em>optional</em>) – Extra positional arguments for the sub-modules.</p></li>
+<li><p><strong>mod_kwargs</strong> (<em>dict</em><em>[</em><em>str</em><em>, </em><em>dict</em><em>[</em><em>str</em><em>, </em><em>any</em><em>]</em><em>]</em><em>, </em><em>optional</em>) – Extra key-word arguments for the sub-modules.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Output representations for every types of nodes.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict[str, Tensor]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="BrainAlign.came.model.heteroframe.HeteroGraphConv.training">
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#BrainAlign.came.model.heteroframe.HeteroGraphConv.training" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-BrainAlign.came.model.hidden">
+<span id="brainalign-came-model-hidden-module"></span><h2>BrainAlign.came.model.hidden module<a class="headerlink" href="#module-BrainAlign.came.model.hidden" title="Permalink to this heading"></a></h2>
+<p>Created on Sun Apr 11 18:42:39 2021</p>
+<p>&#64;author: Xingyan Liu</p>
+<p>Hidden layers (not including the embedding layer)</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="BrainAlign.came.model.hidden.HiddenRGCN">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">BrainAlign.came.model.hidden.</span></span><span class="sig-name descname"><span class="pre">HiddenRGCN</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">canonical_etypes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h_dim</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">32</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_hidden_layers</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norm</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'right'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_weight</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dropout</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">negative_slope</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batchnorm_ntypes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layernorm_ntypes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">share_layernorm</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bias</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">activate_out</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwds</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.model.hidden.HiddenRGCN" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></p>
+<p>NOT sharing parameters across hidden layers</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.came.model.hidden.HiddenRGCN.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">g</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bias</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">activate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwds</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.model.hidden.HiddenRGCN.forward" title="Permalink to this definition"></a></dt>
+<dd><p>No copies made for h_dict, so make sure the forward functions do not
+make any changes directly on the h_dict !</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="BrainAlign.came.model.hidden.HiddenRGCN.training">
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#BrainAlign.came.model.hidden.HiddenRGCN.training" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="BrainAlign.came.model.hidden.HiddenRRGCN">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">BrainAlign.came.model.hidden.</span></span><span class="sig-name descname"><span class="pre">HiddenRRGCN</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">canonical_etypes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h_dim</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">32</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_hidden_layers</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_dim</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norm</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'right'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dropout</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">negative_slope</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.05</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batchnorm_ntypes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layernorm_ntypes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">share_layernorm</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.model.hidden.HiddenRRGCN" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></p>
+<p>Stacked hidden layers sharing parameters with each other, so that the
+dimensions for each layer should be the same.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>canonical_etypes</strong> (<em>dgl.DGLGraph</em><em> or </em><em>a list</em><em> of </em><em>3-length-tuples</em>) – if provide a list of tuples, each of the tuples should be like
+<code class="docutils literal notranslate"><span class="pre">(node_type_source,</span> <span class="pre">edge_type,</span> <span class="pre">node_type_destination)</span></code>.</p></li>
+<li><p><strong>h_dim</strong> (<em>int</em>) – number of dimensions of the hidden states</p></li>
+<li><p><strong>num_hidden_layers</strong> (<em>int</em>) – number of hidden layers</p></li>
+<li><p><strong>out_dim</strong> (<em>Optional</em><em>[</em><em>int</em><em> or </em><em>Tuple</em><em>[</em><em>int</em><em>]</em><em>]</em>) – if provided, an extra hidden layer will be add before the classifier</p></li>
+<li><p><strong>norm</strong> (<em>str</em>) – normalization method for message aggregation, should be one of
+{‘none’, ‘both’, ‘right’, ‘left’} (Default: ‘right’)</p></li>
+<li><p><strong>use_weight</strong> (<em>bool</em>) – True if a linear layer is applied after message passing. Default: True</p></li>
+<li><p><strong>dropout</strong> (<em>float</em>) – dropout-rate for the hidden layer</p></li>
+<li><p><strong>negative_slope</strong> (<em>float</em>) – negative slope for <code class="docutils literal notranslate"><span class="pre">LeakyReLU</span></code></p></li>
+<li><p><strong>batchnorm_ntypes</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – specify the node types to apply BatchNorm (Default: None)</p></li>
+<li><p><strong>layernorm_ntypes</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – specify the node types to apply <code class="docutils literal notranslate"><span class="pre">LayerNorm</span></code></p></li>
+<li><p><strong>share_layernorm</strong> (<em>bool</em>) – whether to share the LayerNorm across hidden layers</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><code class="xref py py-obj docutils literal notranslate"><span class="pre">GeneralRGCLayer</span></code></p>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.came.model.hidden.HiddenRRGCN.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">g_or_blocks</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bias</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">activate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwds</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.model.hidden.HiddenRRGCN.forward" title="Permalink to this definition"></a></dt>
+<dd><p>No copies made for h_dict, so make sure the forward functions do not
+make any changes directly on the h_dict !</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="BrainAlign.came.model.hidden.HiddenRRGCN.training">
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#BrainAlign.came.model.hidden.HiddenRRGCN.training" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-BrainAlign.came.model.loss">
+<span id="brainalign-came-model-loss-module"></span><h2>BrainAlign.came.model.loss module<a class="headerlink" href="#module-BrainAlign.came.model.loss" title="Permalink to this heading"></a></h2>
+<p>Created on Sun Apr 11 18:46:19 2021</p>
+<p>&#64;author: Xingyan Liu</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="BrainAlign.came.model.loss.LabelSmoothingCrossEntropy">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">BrainAlign.came.model.loss.</span></span><span class="sig-name descname"><span class="pre">LabelSmoothingCrossEntropy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reduction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'mean'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.model.loss.LabelSmoothingCrossEntropy" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.came.model.loss.LabelSmoothingCrossEntropy.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.model.loss.LabelSmoothingCrossEntropy.forward" title="Permalink to this definition"></a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="BrainAlign.came.model.loss.LabelSmoothingCrossEntropy.training">
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#BrainAlign.came.model.loss.LabelSmoothingCrossEntropy.training" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="BrainAlign.came.model.loss.ce_loss_with_rdrop">
+<span class="sig-prename descclassname"><span class="pre">BrainAlign.came.model.loss.</span></span><span class="sig-name descname"><span class="pre">ce_loss_with_rdrop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logits1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logits2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">train_idx=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha=0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reduction='mean'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loss_fn:</span> <span class="pre">~typing.Callable</span> <span class="pre">=</span> <span class="pre">&lt;function</span> <span class="pre">cross_entropy_loss&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.model.loss.ce_loss_with_rdrop" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="BrainAlign.came.model.loss.classification_loss">
+<span class="sig-prename descclassname"><span class="pre">BrainAlign.came.model.loss.</span></span><span class="sig-name descname"><span class="pre">classification_loss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logits</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels_1hot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">smooth_eps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reduction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'mean'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">ignored</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.model.loss.classification_loss" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="BrainAlign.came.model.loss.compute_kl_loss">
+<span class="sig-prename descclassname"><span class="pre">BrainAlign.came.model.loss.</span></span><span class="sig-name descname"><span class="pre">compute_kl_loss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reduction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'mean'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pad_mask</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.model.loss.compute_kl_loss" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="BrainAlign.came.model.loss.cross_entropy_loss">
+<span class="sig-prename descclassname"><span class="pre">BrainAlign.came.model.loss.</span></span><span class="sig-name descname"><span class="pre">cross_entropy_loss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logits</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">smooth_eps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reduction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'mean'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.model.loss.cross_entropy_loss" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="BrainAlign.came.model.loss.multilabel_binary_cross_entropy">
+<span class="sig-prename descclassname"><span class="pre">BrainAlign.came.model.loss.</span></span><span class="sig-name descname"><span class="pre">multilabel_binary_cross_entropy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logits</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reduction</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'mean'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.model.loss.multilabel_binary_cross_entropy" title="Permalink to this definition"></a></dt>
+<dd><p>multi-label binary cross-entropy</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>logits</strong> – model output logits, without softmax</p></li>
+<li><p><strong>labels</strong> – two-dimensional one-hot labels</p></li>
+<li><p><strong>weight</strong> – class weights</p></li>
+<li><p><strong>reduction</strong> – ‘mean’ or ‘sum’</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>loss</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-BrainAlign.came.model">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-BrainAlign.came.model" title="Permalink to this heading"></a></h2>
+<p>Created on Sun Dec 27 21:59:44 2020</p>
+<p>&#64;author: Xingyan Liu</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Biao Zhang.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

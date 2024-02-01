@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BrainAlign.code package &mdash; BrainAlign 0.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            BrainAlign
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">BrainAlign.code package</a><ul>
+<li><a class="reference internal" href="#subpackages">Subpackages</a></li>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#brainalign-code-main-module">BrainAlign.code.main module</a></li>
+<li><a class="reference internal" href="#module-BrainAlign.code.main_heco">BrainAlign.code.main_heco module</a><ul>
+<li><a class="reference internal" href="#BrainAlign.code.main_heco.run_heco"><code class="docutils literal notranslate"><span class="pre">run_heco()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.code.main_heco.train"><code class="docutils literal notranslate"><span class="pre">train()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#brainalign-code-main-parallel-module">BrainAlign.code.main_parallel module</a></li>
+<li><a class="reference internal" href="#brainalign-code-predict-module">BrainAlign.code.predict module</a></li>
+<li><a class="reference internal" href="#module-BrainAlign.code">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">BrainAlign</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">BrainAlign.code package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/BrainAlign.code.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="brainalign-code-package">
+<h1>BrainAlign.code package<a class="headerlink" href="#brainalign-code-package" title="Permalink to this heading"></a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="BrainAlign.code.module.html">BrainAlign.code.module package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="BrainAlign.code.module.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BrainAlign.code.module.html#module-BrainAlign.code.module.contrast">BrainAlign.code.module.contrast module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="BrainAlign.code.module.html#BrainAlign.code.module.contrast.Contrast"><code class="docutils literal notranslate"><span class="pre">Contrast</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="BrainAlign.code.module.html#BrainAlign.code.module.contrast.Contrast.forward"><code class="docutils literal notranslate"><span class="pre">Contrast.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="BrainAlign.code.module.html#BrainAlign.code.module.contrast.Contrast.sim"><code class="docutils literal notranslate"><span class="pre">Contrast.sim()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="BrainAlign.code.module.html#BrainAlign.code.module.contrast.Contrast.training"><code class="docutils literal notranslate"><span class="pre">Contrast.training</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="BrainAlign.code.module.html#module-BrainAlign.code.module.heco">BrainAlign.code.module.heco module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="BrainAlign.code.module.html#BrainAlign.code.module.heco.HeCo"><code class="docutils literal notranslate"><span class="pre">HeCo</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="BrainAlign.code.module.html#BrainAlign.code.module.heco.HeCo.forward"><code class="docutils literal notranslate"><span class="pre">HeCo.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="BrainAlign.code.module.html#BrainAlign.code.module.heco.HeCo.get_embeds"><code class="docutils literal notranslate"><span class="pre">HeCo.get_embeds()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="BrainAlign.code.module.html#BrainAlign.code.module.heco.HeCo.training"><code class="docutils literal notranslate"><span class="pre">HeCo.training</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="BrainAlign.code.module.html#module-BrainAlign.code.module.mp_encoder">BrainAlign.code.module.mp_encoder module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="BrainAlign.code.module.html#BrainAlign.code.module.mp_encoder.Attention"><code class="docutils literal notranslate"><span class="pre">Attention</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="BrainAlign.code.module.html#BrainAlign.code.module.mp_encoder.Attention.forward"><code class="docutils literal notranslate"><span class="pre">Attention.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="BrainAlign.code.module.html#BrainAlign.code.module.mp_encoder.Attention.training"><code class="docutils literal notranslate"><span class="pre">Attention.training</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="BrainAlign.code.module.html#BrainAlign.code.module.mp_encoder.GCN"><code class="docutils literal notranslate"><span class="pre">GCN</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="BrainAlign.code.module.html#BrainAlign.code.module.mp_encoder.GCN.forward"><code class="docutils literal notranslate"><span class="pre">GCN.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="BrainAlign.code.module.html#BrainAlign.code.module.mp_encoder.GCN.training"><code class="docutils literal notranslate"><span class="pre">GCN.training</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="BrainAlign.code.module.html#BrainAlign.code.module.mp_encoder.GCN.weights_init"><code class="docutils literal notranslate"><span class="pre">GCN.weights_init()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="BrainAlign.code.module.html#BrainAlign.code.module.mp_encoder.Mp_encoder"><code class="docutils literal notranslate"><span class="pre">Mp_encoder</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="BrainAlign.code.module.html#BrainAlign.code.module.mp_encoder.Mp_encoder.forward"><code class="docutils literal notranslate"><span class="pre">Mp_encoder.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="BrainAlign.code.module.html#BrainAlign.code.module.mp_encoder.Mp_encoder.training"><code class="docutils literal notranslate"><span class="pre">Mp_encoder.training</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="BrainAlign.code.module.html#module-BrainAlign.code.module.sc_encoder">BrainAlign.code.module.sc_encoder module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="BrainAlign.code.module.html#BrainAlign.code.module.sc_encoder.Sc_encoder"><code class="docutils literal notranslate"><span class="pre">Sc_encoder</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="BrainAlign.code.module.html#BrainAlign.code.module.sc_encoder.Sc_encoder.forward"><code class="docutils literal notranslate"><span class="pre">Sc_encoder.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="BrainAlign.code.module.html#BrainAlign.code.module.sc_encoder.Sc_encoder.training"><code class="docutils literal notranslate"><span class="pre">Sc_encoder.training</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="BrainAlign.code.module.html#BrainAlign.code.module.sc_encoder.inter_att"><code class="docutils literal notranslate"><span class="pre">inter_att</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="BrainAlign.code.module.html#BrainAlign.code.module.sc_encoder.inter_att.forward"><code class="docutils literal notranslate"><span class="pre">inter_att.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="BrainAlign.code.module.html#BrainAlign.code.module.sc_encoder.inter_att.training"><code class="docutils literal notranslate"><span class="pre">inter_att.training</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="BrainAlign.code.module.html#BrainAlign.code.module.sc_encoder.intra_att"><code class="docutils literal notranslate"><span class="pre">intra_att</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="BrainAlign.code.module.html#BrainAlign.code.module.sc_encoder.intra_att.forward"><code class="docutils literal notranslate"><span class="pre">intra_att.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="BrainAlign.code.module.html#BrainAlign.code.module.sc_encoder.intra_att.training"><code class="docutils literal notranslate"><span class="pre">intra_att.training</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="BrainAlign.code.module.html#module-BrainAlign.code.module">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="BrainAlign.code.utils.html">BrainAlign.code.utils package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="BrainAlign.code.utils.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BrainAlign.code.utils.html#module-BrainAlign.code.utils.evaluate">BrainAlign.code.utils.evaluate module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="BrainAlign.code.utils.html#BrainAlign.code.utils.evaluate.evaluate"><code class="docutils literal notranslate"><span class="pre">evaluate()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="BrainAlign.code.utils.html#module-BrainAlign.code.utils.load_data">BrainAlign.code.utils.load_data module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="BrainAlign.code.utils.html#BrainAlign.code.utils.load_data.encode_onehot"><code class="docutils literal notranslate"><span class="pre">encode_onehot()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BrainAlign.code.utils.html#BrainAlign.code.utils.load_data.load_acm"><code class="docutils literal notranslate"><span class="pre">load_acm()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BrainAlign.code.utils.html#BrainAlign.code.utils.load_data.load_aminer"><code class="docutils literal notranslate"><span class="pre">load_aminer()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BrainAlign.code.utils.html#BrainAlign.code.utils.load_data.load_data"><code class="docutils literal notranslate"><span class="pre">load_data()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BrainAlign.code.utils.html#BrainAlign.code.utils.load_data.load_dblp"><code class="docutils literal notranslate"><span class="pre">load_dblp()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BrainAlign.code.utils.html#BrainAlign.code.utils.load_data.load_freebase"><code class="docutils literal notranslate"><span class="pre">load_freebase()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BrainAlign.code.utils.html#BrainAlign.code.utils.load_data.load_mouse_human"><code class="docutils literal notranslate"><span class="pre">load_mouse_human()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BrainAlign.code.utils.html#BrainAlign.code.utils.load_data.load_mouse_human_binary"><code class="docutils literal notranslate"><span class="pre">load_mouse_human_binary()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BrainAlign.code.utils.html#BrainAlign.code.utils.load_data.load_mouse_human_sagittal"><code class="docutils literal notranslate"><span class="pre">load_mouse_human_sagittal()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BrainAlign.code.utils.html#BrainAlign.code.utils.load_data.load_mouse_human_three"><code class="docutils literal notranslate"><span class="pre">load_mouse_human_three()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BrainAlign.code.utils.html#BrainAlign.code.utils.load_data.normalize_adj"><code class="docutils literal notranslate"><span class="pre">normalize_adj()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BrainAlign.code.utils.html#BrainAlign.code.utils.load_data.preprocess_features"><code class="docutils literal notranslate"><span class="pre">preprocess_features()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BrainAlign.code.utils.html#BrainAlign.code.utils.load_data.sparse_mx_to_torch_sparse_tensor"><code class="docutils literal notranslate"><span class="pre">sparse_mx_to_torch_sparse_tensor()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="BrainAlign.code.utils.html#module-BrainAlign.code.utils.logger">BrainAlign.code.utils.logger module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="BrainAlign.code.utils.html#BrainAlign.code.utils.logger.setup_logger"><code class="docutils literal notranslate"><span class="pre">setup_logger()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="BrainAlign.code.utils.html#module-BrainAlign.code.utils.logreg">BrainAlign.code.utils.logreg module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="BrainAlign.code.utils.html#BrainAlign.code.utils.logreg.LogReg"><code class="docutils literal notranslate"><span class="pre">LogReg</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="BrainAlign.code.utils.html#BrainAlign.code.utils.logreg.LogReg.forward"><code class="docutils literal notranslate"><span class="pre">LogReg.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="BrainAlign.code.utils.html#BrainAlign.code.utils.logreg.LogReg.training"><code class="docutils literal notranslate"><span class="pre">LogReg.training</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="BrainAlign.code.utils.html#BrainAlign.code.utils.logreg.LogReg.weights_init"><code class="docutils literal notranslate"><span class="pre">LogReg.weights_init()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="BrainAlign.code.utils.html#module-BrainAlign.code.utils.params">BrainAlign.code.utils.params module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="BrainAlign.code.utils.html#BrainAlign.code.utils.params.acm_params"><code class="docutils literal notranslate"><span class="pre">acm_params()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BrainAlign.code.utils.html#BrainAlign.code.utils.params.aminer_params"><code class="docutils literal notranslate"><span class="pre">aminer_params()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BrainAlign.code.utils.html#BrainAlign.code.utils.params.dblp_params"><code class="docutils literal notranslate"><span class="pre">dblp_params()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BrainAlign.code.utils.html#BrainAlign.code.utils.params.freebase_params"><code class="docutils literal notranslate"><span class="pre">freebase_params()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BrainAlign.code.utils.html#BrainAlign.code.utils.params.mouse_human_all_binary_params"><code class="docutils literal notranslate"><span class="pre">mouse_human_all_binary_params()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BrainAlign.code.utils.html#BrainAlign.code.utils.params.mouse_human_binary_params"><code class="docutils literal notranslate"><span class="pre">mouse_human_binary_params()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BrainAlign.code.utils.html#BrainAlign.code.utils.params.mouse_human_params"><code class="docutils literal notranslate"><span class="pre">mouse_human_params()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BrainAlign.code.utils.html#BrainAlign.code.utils.params.mouse_human_sagittal_params"><code class="docutils literal notranslate"><span class="pre">mouse_human_sagittal_params()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BrainAlign.code.utils.html#BrainAlign.code.utils.params.set_params"><code class="docutils literal notranslate"><span class="pre">set_params()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="BrainAlign.code.utils.html#module-BrainAlign.code.utils">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="brainalign-code-main-module">
+<h2>BrainAlign.code.main module<a class="headerlink" href="#brainalign-code-main-module" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-BrainAlign.code.main_heco">
+<span id="brainalign-code-main-heco-module"></span><h2>BrainAlign.code.main_heco module<a class="headerlink" href="#module-BrainAlign.code.main_heco" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="BrainAlign.code.main_heco.run_heco">
+<span class="sig-prename descclassname"><span class="pre">BrainAlign.code.main_heco.</span></span><span class="sig-name descname"><span class="pre">run_heco</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cfg</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.code.main_heco.run_heco" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="BrainAlign.code.main_heco.train">
+<span class="sig-prename descclassname"><span class="pre">BrainAlign.code.main_heco.</span></span><span class="sig-name descname"><span class="pre">train</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cfg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.code.main_heco.train" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="brainalign-code-main-parallel-module">
+<h2>BrainAlign.code.main_parallel module<a class="headerlink" href="#brainalign-code-main-parallel-module" title="Permalink to this heading"></a></h2>
+</section>
+<section id="brainalign-code-predict-module">
+<h2>BrainAlign.code.predict module<a class="headerlink" href="#brainalign-code-predict-module" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-BrainAlign.code">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-BrainAlign.code" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Biao Zhang.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

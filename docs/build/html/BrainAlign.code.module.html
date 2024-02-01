@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BrainAlign.code.module package &mdash; BrainAlign 0.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            BrainAlign
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">BrainAlign.code.module package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-BrainAlign.code.module.contrast">BrainAlign.code.module.contrast module</a><ul>
+<li><a class="reference internal" href="#BrainAlign.code.module.contrast.Contrast"><code class="docutils literal notranslate"><span class="pre">Contrast</span></code></a><ul>
+<li><a class="reference internal" href="#BrainAlign.code.module.contrast.Contrast.forward"><code class="docutils literal notranslate"><span class="pre">Contrast.forward()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.code.module.contrast.Contrast.sim"><code class="docutils literal notranslate"><span class="pre">Contrast.sim()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.code.module.contrast.Contrast.training"><code class="docutils literal notranslate"><span class="pre">Contrast.training</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-BrainAlign.code.module.heco">BrainAlign.code.module.heco module</a><ul>
+<li><a class="reference internal" href="#BrainAlign.code.module.heco.HeCo"><code class="docutils literal notranslate"><span class="pre">HeCo</span></code></a><ul>
+<li><a class="reference internal" href="#BrainAlign.code.module.heco.HeCo.forward"><code class="docutils literal notranslate"><span class="pre">HeCo.forward()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.code.module.heco.HeCo.get_embeds"><code class="docutils literal notranslate"><span class="pre">HeCo.get_embeds()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.code.module.heco.HeCo.training"><code class="docutils literal notranslate"><span class="pre">HeCo.training</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-BrainAlign.code.module.mp_encoder">BrainAlign.code.module.mp_encoder module</a><ul>
+<li><a class="reference internal" href="#BrainAlign.code.module.mp_encoder.Attention"><code class="docutils literal notranslate"><span class="pre">Attention</span></code></a><ul>
+<li><a class="reference internal" href="#BrainAlign.code.module.mp_encoder.Attention.forward"><code class="docutils literal notranslate"><span class="pre">Attention.forward()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.code.module.mp_encoder.Attention.training"><code class="docutils literal notranslate"><span class="pre">Attention.training</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#BrainAlign.code.module.mp_encoder.GCN"><code class="docutils literal notranslate"><span class="pre">GCN</span></code></a><ul>
+<li><a class="reference internal" href="#BrainAlign.code.module.mp_encoder.GCN.forward"><code class="docutils literal notranslate"><span class="pre">GCN.forward()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.code.module.mp_encoder.GCN.training"><code class="docutils literal notranslate"><span class="pre">GCN.training</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.code.module.mp_encoder.GCN.weights_init"><code class="docutils literal notranslate"><span class="pre">GCN.weights_init()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#BrainAlign.code.module.mp_encoder.Mp_encoder"><code class="docutils literal notranslate"><span class="pre">Mp_encoder</span></code></a><ul>
+<li><a class="reference internal" href="#BrainAlign.code.module.mp_encoder.Mp_encoder.forward"><code class="docutils literal notranslate"><span class="pre">Mp_encoder.forward()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.code.module.mp_encoder.Mp_encoder.training"><code class="docutils literal notranslate"><span class="pre">Mp_encoder.training</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-BrainAlign.code.module.sc_encoder">BrainAlign.code.module.sc_encoder module</a><ul>
+<li><a class="reference internal" href="#BrainAlign.code.module.sc_encoder.Sc_encoder"><code class="docutils literal notranslate"><span class="pre">Sc_encoder</span></code></a><ul>
+<li><a class="reference internal" href="#BrainAlign.code.module.sc_encoder.Sc_encoder.forward"><code class="docutils literal notranslate"><span class="pre">Sc_encoder.forward()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.code.module.sc_encoder.Sc_encoder.training"><code class="docutils literal notranslate"><span class="pre">Sc_encoder.training</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#BrainAlign.code.module.sc_encoder.inter_att"><code class="docutils literal notranslate"><span class="pre">inter_att</span></code></a><ul>
+<li><a class="reference internal" href="#BrainAlign.code.module.sc_encoder.inter_att.forward"><code class="docutils literal notranslate"><span class="pre">inter_att.forward()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.code.module.sc_encoder.inter_att.training"><code class="docutils literal notranslate"><span class="pre">inter_att.training</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#BrainAlign.code.module.sc_encoder.intra_att"><code class="docutils literal notranslate"><span class="pre">intra_att</span></code></a><ul>
+<li><a class="reference internal" href="#BrainAlign.code.module.sc_encoder.intra_att.forward"><code class="docutils literal notranslate"><span class="pre">intra_att.forward()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.code.module.sc_encoder.intra_att.training"><code class="docutils literal notranslate"><span class="pre">intra_att.training</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-BrainAlign.code.module">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">BrainAlign</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">BrainAlign.code.module package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/BrainAlign.code.module.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="brainalign-code-module-package">
+<h1>BrainAlign.code.module package<a class="headerlink" href="#brainalign-code-module-package" title="Permalink to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-BrainAlign.code.module.contrast">
+<span id="brainalign-code-module-contrast-module"></span><h2>BrainAlign.code.module.contrast module<a class="headerlink" href="#module-BrainAlign.code.module.contrast" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="BrainAlign.code.module.contrast.Contrast">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">BrainAlign.code.module.contrast.</span></span><span class="sig-name descname"><span class="pre">Contrast</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hidden_dim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tau</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lam</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.code.module.contrast.Contrast" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.code.module.contrast.Contrast.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z_mp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z_sc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pos</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.code.module.contrast.Contrast.forward" title="Permalink to this definition"></a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.code.module.contrast.Contrast.sim">
+<span class="sig-name descname"><span class="pre">sim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.code.module.contrast.Contrast.sim" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="BrainAlign.code.module.contrast.Contrast.training">
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#BrainAlign.code.module.contrast.Contrast.training" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-BrainAlign.code.module.heco">
+<span id="brainalign-code-module-heco-module"></span><h2>BrainAlign.code.module.heco module<a class="headerlink" href="#module-BrainAlign.code.module.heco" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="BrainAlign.code.module.heco.HeCo">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">BrainAlign.code.module.heco.</span></span><span class="sig-name descname"><span class="pre">HeCo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hidden_dim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feats_dim_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feat_drop</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attn_drop</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">P</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_rate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nei_num</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tau</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lam</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.code.module.heco.HeCo" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.code.module.heco.HeCo.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feats</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mps</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nei_index</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.code.module.heco.HeCo.forward" title="Permalink to this definition"></a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.code.module.heco.HeCo.get_embeds">
+<span class="sig-name descname"><span class="pre">get_embeds</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feats</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mps</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.code.module.heco.HeCo.get_embeds" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="BrainAlign.code.module.heco.HeCo.training">
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#BrainAlign.code.module.heco.HeCo.training" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-BrainAlign.code.module.mp_encoder">
+<span id="brainalign-code-module-mp-encoder-module"></span><h2>BrainAlign.code.module.mp_encoder module<a class="headerlink" href="#module-BrainAlign.code.module.mp_encoder" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="BrainAlign.code.module.mp_encoder.Attention">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">BrainAlign.code.module.mp_encoder.</span></span><span class="sig-name descname"><span class="pre">Attention</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hidden_dim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attn_drop</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.code.module.mp_encoder.Attention" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.code.module.mp_encoder.Attention.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">embeds</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.code.module.mp_encoder.Attention.forward" title="Permalink to this definition"></a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="BrainAlign.code.module.mp_encoder.Attention.training">
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#BrainAlign.code.module.mp_encoder.Attention.training" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="BrainAlign.code.module.mp_encoder.GCN">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">BrainAlign.code.module.mp_encoder.</span></span><span class="sig-name descname"><span class="pre">GCN</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">in_ft</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_ft</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bias</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.code.module.mp_encoder.GCN" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.code.module.mp_encoder.GCN.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seq</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">adj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.code.module.mp_encoder.GCN.forward" title="Permalink to this definition"></a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="BrainAlign.code.module.mp_encoder.GCN.training">
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#BrainAlign.code.module.mp_encoder.GCN.training" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.code.module.mp_encoder.GCN.weights_init">
+<span class="sig-name descname"><span class="pre">weights_init</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">m</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.code.module.mp_encoder.GCN.weights_init" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="BrainAlign.code.module.mp_encoder.Mp_encoder">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">BrainAlign.code.module.mp_encoder.</span></span><span class="sig-name descname"><span class="pre">Mp_encoder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">P</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hidden_dim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attn_drop</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.code.module.mp_encoder.Mp_encoder" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.code.module.mp_encoder.Mp_encoder.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">h</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mps</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.code.module.mp_encoder.Mp_encoder.forward" title="Permalink to this definition"></a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="BrainAlign.code.module.mp_encoder.Mp_encoder.training">
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#BrainAlign.code.module.mp_encoder.Mp_encoder.training" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-BrainAlign.code.module.sc_encoder">
+<span id="brainalign-code-module-sc-encoder-module"></span><h2>BrainAlign.code.module.sc_encoder module<a class="headerlink" href="#module-BrainAlign.code.module.sc_encoder" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="BrainAlign.code.module.sc_encoder.Sc_encoder">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">BrainAlign.code.module.sc_encoder.</span></span><span class="sig-name descname"><span class="pre">Sc_encoder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hidden_dim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_rate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nei_num</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attn_drop</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.code.module.sc_encoder.Sc_encoder" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.code.module.sc_encoder.Sc_encoder.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nei_h</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nei_index</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.code.module.sc_encoder.Sc_encoder.forward" title="Permalink to this definition"></a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="BrainAlign.code.module.sc_encoder.Sc_encoder.training">
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#BrainAlign.code.module.sc_encoder.Sc_encoder.training" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="BrainAlign.code.module.sc_encoder.inter_att">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">BrainAlign.code.module.sc_encoder.</span></span><span class="sig-name descname"><span class="pre">inter_att</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hidden_dim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attn_drop</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.code.module.sc_encoder.inter_att" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.code.module.sc_encoder.inter_att.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">embeds</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.code.module.sc_encoder.inter_att.forward" title="Permalink to this definition"></a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="BrainAlign.code.module.sc_encoder.inter_att.training">
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#BrainAlign.code.module.sc_encoder.inter_att.training" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="BrainAlign.code.module.sc_encoder.intra_att">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">BrainAlign.code.module.sc_encoder.</span></span><span class="sig-name descname"><span class="pre">intra_att</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hidden_dim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attn_drop</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.code.module.sc_encoder.intra_att" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.code.module.sc_encoder.intra_att.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nei</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h_refer</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.code.module.sc_encoder.intra_att.forward" title="Permalink to this definition"></a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="BrainAlign.code.module.sc_encoder.intra_att.training">
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#BrainAlign.code.module.sc_encoder.intra_att.training" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-BrainAlign.code.module">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-BrainAlign.code.module" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Biao Zhang.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BrainAlign.came.datapair package &mdash; BrainAlign 0.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            BrainAlign
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">BrainAlign.came.datapair package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-BrainAlign.came.datapair.aligned">BrainAlign.came.datapair.aligned module</a><ul>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.aligned.AlignedDataPair"><code class="docutils literal notranslate"><span class="pre">AlignedDataPair</span></code></a><ul>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.G"><code class="docutils literal notranslate"><span class="pre">AlignedDataPair.G</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.classes"><code class="docutils literal notranslate"><span class="pre">AlignedDataPair.classes</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.etypes"><code class="docutils literal notranslate"><span class="pre">AlignedDataPair.etypes</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.get_feature_dict"><code class="docutils literal notranslate"><span class="pre">AlignedDataPair.get_feature_dict()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.get_obs_anno"><code class="docutils literal notranslate"><span class="pre">AlignedDataPair.get_obs_anno()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.get_obs_dataset"><code class="docutils literal notranslate"><span class="pre">AlignedDataPair.get_obs_dataset()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.get_obs_features"><code class="docutils literal notranslate"><span class="pre">AlignedDataPair.get_obs_features()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.get_obs_ids"><code class="docutils literal notranslate"><span class="pre">AlignedDataPair.get_obs_ids()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.get_obs_labels"><code class="docutils literal notranslate"><span class="pre">AlignedDataPair.get_obs_labels()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.get_whole_net"><code class="docutils literal notranslate"><span class="pre">AlignedDataPair.get_whole_net()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.labels"><code class="docutils literal notranslate"><span class="pre">AlignedDataPair.labels</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.load"><code class="docutils literal notranslate"><span class="pre">AlignedDataPair.load()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.make_ov_adj"><code class="docutils literal notranslate"><span class="pre">AlignedDataPair.make_ov_adj()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.make_whole_net"><code class="docutils literal notranslate"><span class="pre">AlignedDataPair.make_whole_net()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.n_feats"><code class="docutils literal notranslate"><span class="pre">AlignedDataPair.n_feats</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.n_obs"><code class="docutils literal notranslate"><span class="pre">AlignedDataPair.n_obs</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.n_obs1"><code class="docutils literal notranslate"><span class="pre">AlignedDataPair.n_obs1</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.n_obs2"><code class="docutils literal notranslate"><span class="pre">AlignedDataPair.n_obs2</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.n_vnodes"><code class="docutils literal notranslate"><span class="pre">AlignedDataPair.n_vnodes</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.ntypes"><code class="docutils literal notranslate"><span class="pre">AlignedDataPair.ntypes</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.obs_ids"><code class="docutils literal notranslate"><span class="pre">AlignedDataPair.obs_ids</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.obs_ids1"><code class="docutils literal notranslate"><span class="pre">AlignedDataPair.obs_ids1</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.obs_ids2"><code class="docutils literal notranslate"><span class="pre">AlignedDataPair.obs_ids2</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.oo_adj"><code class="docutils literal notranslate"><span class="pre">AlignedDataPair.oo_adj</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.ov_adj"><code class="docutils literal notranslate"><span class="pre">AlignedDataPair.ov_adj</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.save_init"><code class="docutils literal notranslate"><span class="pre">AlignedDataPair.save_init()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.set_common_obs_annos"><code class="docutils literal notranslate"><span class="pre">AlignedDataPair.set_common_obs_annos()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.set_dataset_names"><code class="docutils literal notranslate"><span class="pre">AlignedDataPair.set_dataset_names()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.set_etypes"><code class="docutils literal notranslate"><span class="pre">AlignedDataPair.set_etypes()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.set_features"><code class="docutils literal notranslate"><span class="pre">AlignedDataPair.set_features()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.set_ntypes"><code class="docutils literal notranslate"><span class="pre">AlignedDataPair.set_ntypes()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.set_obs_dfs"><code class="docutils literal notranslate"><span class="pre">AlignedDataPair.set_obs_dfs()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.set_oo_adj"><code class="docutils literal notranslate"><span class="pre">AlignedDataPair.set_oo_adj()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.set_ov_adj"><code class="docutils literal notranslate"><span class="pre">AlignedDataPair.set_ov_adj()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.set_varnames_node"><code class="docutils literal notranslate"><span class="pre">AlignedDataPair.set_varnames_node()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.summary_graph"><code class="docutils literal notranslate"><span class="pre">AlignedDataPair.summary_graph()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.varnames_feat"><code class="docutils literal notranslate"><span class="pre">AlignedDataPair.varnames_feat</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.varnames_node"><code class="docutils literal notranslate"><span class="pre">AlignedDataPair.varnames_node</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.vnode_ids"><code class="docutils literal notranslate"><span class="pre">AlignedDataPair.vnode_ids</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.aligned.aligned_datapair_from_adatas"><code class="docutils literal notranslate"><span class="pre">aligned_datapair_from_adatas()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-BrainAlign.came.datapair.unaligned">BrainAlign.came.datapair.unaligned module</a><ul>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.unaligned.DataPair"><code class="docutils literal notranslate"><span class="pre">DataPair</span></code></a><ul>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.unaligned.DataPair.G"><code class="docutils literal notranslate"><span class="pre">DataPair.G</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.unaligned.DataPair.classes"><code class="docutils literal notranslate"><span class="pre">DataPair.classes</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.unaligned.DataPair.etypes"><code class="docutils literal notranslate"><span class="pre">DataPair.etypes</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.unaligned.DataPair.feat_names1"><code class="docutils literal notranslate"><span class="pre">DataPair.feat_names1</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.unaligned.DataPair.feat_names2"><code class="docutils literal notranslate"><span class="pre">DataPair.feat_names2</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.unaligned.DataPair.get_feature_dict"><code class="docutils literal notranslate"><span class="pre">DataPair.get_feature_dict()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.unaligned.DataPair.get_obs_anno"><code class="docutils literal notranslate"><span class="pre">DataPair.get_obs_anno()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.unaligned.DataPair.get_obs_dataset"><code class="docutils literal notranslate"><span class="pre">DataPair.get_obs_dataset()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.unaligned.DataPair.get_obs_features"><code class="docutils literal notranslate"><span class="pre">DataPair.get_obs_features()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.unaligned.DataPair.get_obs_ids"><code class="docutils literal notranslate"><span class="pre">DataPair.get_obs_ids()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.unaligned.DataPair.get_obs_labels"><code class="docutils literal notranslate"><span class="pre">DataPair.get_obs_labels()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.unaligned.DataPair.get_vnode_ids"><code class="docutils literal notranslate"><span class="pre">DataPair.get_vnode_ids()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.unaligned.DataPair.get_vnode_ids_by_name"><code class="docutils literal notranslate"><span class="pre">DataPair.get_vnode_ids_by_name()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.unaligned.DataPair.get_vnode_names"><code class="docutils literal notranslate"><span class="pre">DataPair.get_vnode_names()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.unaligned.DataPair.get_whole_net"><code class="docutils literal notranslate"><span class="pre">DataPair.get_whole_net()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.unaligned.DataPair.labels"><code class="docutils literal notranslate"><span class="pre">DataPair.labels</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.unaligned.DataPair.load"><code class="docutils literal notranslate"><span class="pre">DataPair.load()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.unaligned.DataPair.make_ov_adj"><code class="docutils literal notranslate"><span class="pre">DataPair.make_ov_adj()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.unaligned.DataPair.make_whole_net"><code class="docutils literal notranslate"><span class="pre">DataPair.make_whole_net()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.unaligned.DataPair.n_feats"><code class="docutils literal notranslate"><span class="pre">DataPair.n_feats</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.unaligned.DataPair.n_obs"><code class="docutils literal notranslate"><span class="pre">DataPair.n_obs</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.unaligned.DataPair.n_obs1"><code class="docutils literal notranslate"><span class="pre">DataPair.n_obs1</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.unaligned.DataPair.n_obs2"><code class="docutils literal notranslate"><span class="pre">DataPair.n_obs2</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.unaligned.DataPair.n_vnodes"><code class="docutils literal notranslate"><span class="pre">DataPair.n_vnodes</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.unaligned.DataPair.n_vnodes1"><code class="docutils literal notranslate"><span class="pre">DataPair.n_vnodes1</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.unaligned.DataPair.n_vnodes2"><code class="docutils literal notranslate"><span class="pre">DataPair.n_vnodes2</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.unaligned.DataPair.ntypes"><code class="docutils literal notranslate"><span class="pre">DataPair.ntypes</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.unaligned.DataPair.obs_ids"><code class="docutils literal notranslate"><span class="pre">DataPair.obs_ids</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.unaligned.DataPair.obs_ids1"><code class="docutils literal notranslate"><span class="pre">DataPair.obs_ids1</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.unaligned.DataPair.obs_ids2"><code class="docutils literal notranslate"><span class="pre">DataPair.obs_ids2</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.unaligned.DataPair.oo_adj"><code class="docutils literal notranslate"><span class="pre">DataPair.oo_adj</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.unaligned.DataPair.ov_adj"><code class="docutils literal notranslate"><span class="pre">DataPair.ov_adj</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.unaligned.DataPair.save_init"><code class="docutils literal notranslate"><span class="pre">DataPair.save_init()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.unaligned.DataPair.set_common_obs_annos"><code class="docutils literal notranslate"><span class="pre">DataPair.set_common_obs_annos()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.unaligned.DataPair.set_dataset_names"><code class="docutils literal notranslate"><span class="pre">DataPair.set_dataset_names()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.unaligned.DataPair.set_etypes"><code class="docutils literal notranslate"><span class="pre">DataPair.set_etypes()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.unaligned.DataPair.set_features"><code class="docutils literal notranslate"><span class="pre">DataPair.set_features()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.unaligned.DataPair.set_ntypes"><code class="docutils literal notranslate"><span class="pre">DataPair.set_ntypes()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.unaligned.DataPair.set_obs_dfs"><code class="docutils literal notranslate"><span class="pre">DataPair.set_obs_dfs()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.unaligned.DataPair.set_oo_adj"><code class="docutils literal notranslate"><span class="pre">DataPair.set_oo_adj()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.unaligned.DataPair.set_ov_adj"><code class="docutils literal notranslate"><span class="pre">DataPair.set_ov_adj()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.unaligned.DataPair.set_var_dfs"><code class="docutils literal notranslate"><span class="pre">DataPair.set_var_dfs()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.unaligned.DataPair.set_vnode_annos"><code class="docutils literal notranslate"><span class="pre">DataPair.set_vnode_annos()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.unaligned.DataPair.set_vv_adj"><code class="docutils literal notranslate"><span class="pre">DataPair.set_vv_adj()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.unaligned.DataPair.summary_graph"><code class="docutils literal notranslate"><span class="pre">DataPair.summary_graph()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.unaligned.DataPair.var_ids1"><code class="docutils literal notranslate"><span class="pre">DataPair.var_ids1</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.unaligned.DataPair.var_ids2"><code class="docutils literal notranslate"><span class="pre">DataPair.var_ids2</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.unaligned.DataPair.vnode_names1"><code class="docutils literal notranslate"><span class="pre">DataPair.vnode_names1</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.unaligned.DataPair.vnode_names2"><code class="docutils literal notranslate"><span class="pre">DataPair.vnode_names2</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.unaligned.DataPair.vv_adj"><code class="docutils literal notranslate"><span class="pre">DataPair.vv_adj</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.unaligned.datapair_from_adatas"><code class="docutils literal notranslate"><span class="pre">datapair_from_adatas()</span></code></a></li>
+<li><a class="reference internal" href="#BrainAlign.came.datapair.unaligned.make_features"><code class="docutils literal notranslate"><span class="pre">make_features()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-BrainAlign.came.datapair">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">BrainAlign</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">BrainAlign.came.datapair package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/BrainAlign.came.datapair.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="brainalign-came-datapair-package">
+<h1>BrainAlign.came.datapair package<a class="headerlink" href="#brainalign-came-datapair-package" title="Permalink to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-BrainAlign.came.datapair.aligned">
+<span id="brainalign-came-datapair-aligned-module"></span><h2>BrainAlign.came.datapair.aligned module<a class="headerlink" href="#module-BrainAlign.came.datapair.aligned" title="Permalink to this heading"></a></h2>
+<p>Created on Tue Sep 15 10:22:55 2020</p>
+<p>&#64;author: Xingyan Liu</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.aligned.AlignedDataPair">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">BrainAlign.came.datapair.aligned.</span></span><span class="sig-name descname"><span class="pre">AlignedDataPair</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">spmatrix</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ov_adjs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">spmatrix</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">oo_adjs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">spmatrix</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">varnames_feat</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">varnames_node</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obs_dfs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">DataFrame</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">var_dfs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">DataFrame</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_names</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">('reference',</span> <span class="pre">'query')</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ntypes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">etypes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">make_graph</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwds</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.datapair.aligned.AlignedDataPair" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Paired datasets with the aligned features
+(e.g. cross-datasets or cross-omics)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>features</strong> (<em>list</em><em> or </em><em>tuple</em>) – a list or tuple of 2 feature matrices.
+common / aligned feratures, as node-features (for observations).
+of shape (n_obs1, n_features) and (n_obs2, n_features)</p></li>
+<li><p><strong>ov_adjs</strong> (<em>list</em><em> or </em><em>tuple</em>) – a list or tuple of 2 (sparse) feature matrices.
+unaligned features, for making <cite>ov_adj</cite>.
+of shape (n_obs1, n_vnodes1) and (n_obs2, n_vnodes2)</p></li>
+<li><p><strong>varnames_feat</strong> (<em>list</em><em> or </em><em>tuple</em>) – names of variables that will be treated as node-features for observations</p></li>
+<li><p><strong>varnames_node</strong> (<em>list</em><em> or </em><em>tuple</em>) – names of variables that will be treated as nodes.</p></li>
+<li><p><strong>obs_dfs</strong> (<em>list</em><em> or </em><em>tuple</em>) – a list or tuple of 2 <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> s</p></li>
+<li><p><strong>ntypes</strong> (<em>dict</em>) – A dict for specifying names of the node types</p></li>
+<li><p><strong>etypes</strong> (<em>dict</em>) – A dict for specifying names of the edge types</p></li>
+<li><p><strong>**kwds</strong> – other key words for the HeteroGraph construction</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">dpair</span> <span class="o">=</span> <span class="n">AlignedDataPair</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="p">[</span><span class="n">features1</span><span class="p">,</span> <span class="n">features2</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="p">[</span><span class="n">ov_adj1</span><span class="p">,</span> <span class="n">ov_adj2</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="n">varnames_feat</span> <span class="o">=</span> <span class="n">vars_feat</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">varnames_node</span> <span class="o">=</span> <span class="n">vars_node</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">obs_dfs</span> <span class="o">=</span> <span class="p">[</span><span class="n">obs1</span><span class="p">,</span> <span class="n">obs2</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="n">dataset_names</span><span class="o">=</span><span class="n">dataset_names</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#BrainAlign.came.datapair.aligned.aligned_datapair_from_adatas" title="BrainAlign.came.datapair.aligned.aligned_datapair_from_adatas"><code class="xref py py-obj docutils literal notranslate"><span class="pre">aligned_datapair_from_adatas</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">datapair_from_adatas</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">DataPair</span></code></p>
+</div>
+<dl class="py property">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.aligned.AlignedDataPair.G">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">G</span></span><a class="headerlink" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.G" title="Permalink to this definition"></a></dt>
+<dd><p>The graph structure, of type <code class="docutils literal notranslate"><span class="pre">dgl.Heterograph</span></code></p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.aligned.AlignedDataPair.classes">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">classes</span></span><a class="headerlink" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.classes" title="Permalink to this definition"></a></dt>
+<dd><p>Unique classes (types) in the reference data, may contain “unknown”
+if there are any types in the query data but not in the reference,
+or if the query data is un-labeled.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.aligned.AlignedDataPair.etypes">
+<span class="sig-name descname"><span class="pre">etypes</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'oo':</span> <span class="pre">'similar_to',</span> <span class="pre">'ov':</span> <span class="pre">'express',</span> <span class="pre">'vo':</span> <span class="pre">'expressed_by'}</span></em><a class="headerlink" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.etypes" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.aligned.AlignedDataPair.get_feature_dict">
+<span class="sig-name descname"><span class="pre">get_feature_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">astensor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit_var</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwds</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.get_feature_dict" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.aligned.AlignedDataPair.get_obs_anno">
+<span class="sig-name descname"><span class="pre">get_obs_anno</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keys</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">which</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">concat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.get_obs_anno" title="Permalink to this definition"></a></dt>
+<dd><p>get the annotations of samples (observations)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.aligned.AlignedDataPair.get_obs_dataset">
+<span class="sig-name descname"><span class="pre">get_obs_dataset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.get_obs_dataset" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.aligned.AlignedDataPair.get_obs_features">
+<span class="sig-name descname"><span class="pre">get_obs_features</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">astensor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit_var</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clip</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clip_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(-3,</span> <span class="pre">3.5)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.get_obs_features" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.aligned.AlignedDataPair.get_obs_ids">
+<span class="sig-name descname"><span class="pre">get_obs_ids</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">which</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">astensor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.get_obs_ids" title="Permalink to this definition"></a></dt>
+<dd><dl class="simple">
+<dt>get node indices for obs-nodes (samples), choices are:</dt><dd><ol class="arabic simple">
+<li><p>all the node ids</p></li>
+<li><p>only the ids of the “reference” data (by <cite>which=0</cite>)</p></li>
+<li><p>only the ids of the “query” data (by <cite>which=1</cite>)</p></li>
+</ol>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.aligned.AlignedDataPair.get_obs_labels">
+<span class="sig-name descname"><span class="pre">get_obs_labels</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keys</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">astensor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">train_use</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">add_unknown_force</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">asint</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name_unknown</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'unknown'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">categories</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">set_attr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.get_obs_labels" title="Permalink to this definition"></a></dt>
+<dd><p>make labels for model training</p>
+<p>If <cite>categories</cite> is provided, the labels will be coded according to it,
+and the names not in <cite>categories</cite> will be NA or <a href="#id1"><span class="problematic" id="id2">`</span></a>name_unknown`(‘unknown’)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.aligned.AlignedDataPair.get_whole_net">
+<span class="sig-name descname"><span class="pre">get_whole_net</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rebuild</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwds</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.get_whole_net" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.aligned.AlignedDataPair.labels">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">labels</span></span><a class="headerlink" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.labels" title="Permalink to this definition"></a></dt>
+<dd><p>Labels for each observations that would be taken as the supervised
+information for model-training.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.aligned.AlignedDataPair.load">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fp</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.load" title="Permalink to this definition"></a></dt>
+<dd><p>load object
+fp:</p>
+<blockquote>
+<div><p>file path to <code class="docutils literal notranslate"><span class="pre">AlignedDataPair</span></code> object, e.g., ‘datapair_init.pickle’</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.aligned.AlignedDataPair.make_ov_adj">
+<span class="sig-name descname"><span class="pre">make_ov_adj</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.make_ov_adj" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.aligned.AlignedDataPair.make_whole_net">
+<span class="sig-name descname"><span class="pre">make_whole_net</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">selfloop_o</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selfloop_v</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.make_whole_net" title="Permalink to this definition"></a></dt>
+<dd><p>make the whole hetero-graph (e.g. cell-gene graph)</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.aligned.AlignedDataPair.n_feats">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">n_feats</span></span><a class="headerlink" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.n_feats" title="Permalink to this definition"></a></dt>
+<dd><p>Number of dimensions of the observation-node features</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.aligned.AlignedDataPair.n_obs">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">n_obs</span></span><a class="headerlink" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.n_obs" title="Permalink to this definition"></a></dt>
+<dd><p>Total number of the observations (e.g., cells)</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.aligned.AlignedDataPair.n_obs1">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">n_obs1</span></span><a class="headerlink" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.n_obs1" title="Permalink to this definition"></a></dt>
+<dd><p>Number of observations (e.g., cells) in the reference data</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.aligned.AlignedDataPair.n_obs2">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">n_obs2</span></span><a class="headerlink" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.n_obs2" title="Permalink to this definition"></a></dt>
+<dd><p>Number of observations (e.g., cells) in the query data</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.aligned.AlignedDataPair.n_vnodes">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">n_vnodes</span></span><a class="headerlink" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.n_vnodes" title="Permalink to this definition"></a></dt>
+<dd><p>Total number of the variables (e.g., genes)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.aligned.AlignedDataPair.ntypes">
+<span class="sig-name descname"><span class="pre">ntypes</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'o':</span> <span class="pre">'cell',</span> <span class="pre">'v':</span> <span class="pre">'gene'}</span></em><a class="headerlink" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.ntypes" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.aligned.AlignedDataPair.obs_ids">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">obs_ids</span></span><a class="headerlink" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.obs_ids" title="Permalink to this definition"></a></dt>
+<dd><p>All of the observation (e.g., cell) indices</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.aligned.AlignedDataPair.obs_ids1">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">obs_ids1</span></span><a class="headerlink" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.obs_ids1" title="Permalink to this definition"></a></dt>
+<dd><p>Indices of the observation (e.g., cell) nodes in the reference data</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.aligned.AlignedDataPair.obs_ids2">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">obs_ids2</span></span><a class="headerlink" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.obs_ids2" title="Permalink to this definition"></a></dt>
+<dd><p>Indices of the observation (e.g., cell) nodes in the query data</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.aligned.AlignedDataPair.oo_adj">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">oo_adj</span></span><a class="headerlink" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.oo_adj" title="Permalink to this definition"></a></dt>
+<dd><p>observation-by-variable adjacent matrix
+(e.g. cell-gene adjacent matrix)</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.aligned.AlignedDataPair.ov_adj">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ov_adj</span></span><a class="headerlink" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.ov_adj" title="Permalink to this definition"></a></dt>
+<dd><p>merged adjacent matrix between observation and variable nodes
+(e.g. cell-gene adjacent matrix)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.aligned.AlignedDataPair.save_init">
+<span class="sig-name descname"><span class="pre">save_init</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'datapair_init.pickle'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.save_init" title="Permalink to this definition"></a></dt>
+<dd><p>save object for reloading</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">adpair</span><span class="o">.</span><span class="n">save_init</span><span class="p">(</span><span class="s1">&#39;datapair_init.pickle&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">element_dict</span> <span class="o">=</span> <span class="n">load_pickle</span><span class="p">(</span><span class="s1">&#39;datapair_init.pickle&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">adpair</span> <span class="o">=</span> <span class="n">AlignedDataPair</span><span class="p">(</span><span class="o">**</span><span class="n">element_dict</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.aligned.AlignedDataPair.set_common_obs_annos">
+<span class="sig-name descname"><span class="pre">set_common_obs_annos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwannos</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.set_common_obs_annos" title="Permalink to this definition"></a></dt>
+<dd><p>Shared and merged annotation labels for ALL of the observations in both
+datasets. (self.obs, pd.DataFrame)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.aligned.AlignedDataPair.set_dataset_names">
+<span class="sig-name descname"><span class="pre">set_dataset_names</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_names</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.set_dataset_names" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.aligned.AlignedDataPair.set_etypes">
+<span class="sig-name descname"><span class="pre">set_etypes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">etypes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.set_etypes" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.aligned.AlignedDataPair.set_features">
+<span class="sig-name descname"><span class="pre">set_features</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">varnames_feat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.set_features" title="Permalink to this definition"></a></dt>
+<dd><p>setting feature matrices, where features are aligned across datasets.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.aligned.AlignedDataPair.set_ntypes">
+<span class="sig-name descname"><span class="pre">set_ntypes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ntypes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.set_ntypes" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.aligned.AlignedDataPair.set_obs_dfs">
+<span class="sig-name descname"><span class="pre">set_obs_dfs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obs2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.set_obs_dfs" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.aligned.AlignedDataPair.set_oo_adj">
+<span class="sig-name descname"><span class="pre">set_oo_adj</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">oo_adjs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.set_oo_adj" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.aligned.AlignedDataPair.set_ov_adj">
+<span class="sig-name descname"><span class="pre">set_ov_adj</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ov_adjs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.set_ov_adj" title="Permalink to this definition"></a></dt>
+<dd><p>set observation-by-variable adjacent matrices</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.aligned.AlignedDataPair.set_varnames_node">
+<span class="sig-name descname"><span class="pre">set_varnames_node</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">varnames_node</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.set_varnames_node" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.aligned.AlignedDataPair.summary_graph">
+<span class="sig-name descname"><span class="pre">summary_graph</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.summary_graph" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.aligned.AlignedDataPair.varnames_feat">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">varnames_feat</span></span><a class="headerlink" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.varnames_feat" title="Permalink to this definition"></a></dt>
+<dd><p>The observation feature names</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.aligned.AlignedDataPair.varnames_node">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">varnames_node</span></span><a class="headerlink" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.varnames_node" title="Permalink to this definition"></a></dt>
+<dd><p>Names of variable nodes</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.aligned.AlignedDataPair.vnode_ids">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">vnode_ids</span></span><a class="headerlink" href="#BrainAlign.came.datapair.aligned.AlignedDataPair.vnode_ids" title="Permalink to this definition"></a></dt>
+<dd><p>All of the variable (e.g., cell) indices</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.aligned.aligned_datapair_from_adatas">
+<span class="sig-prename descclassname"><span class="pre">BrainAlign.came.datapair.aligned.</span></span><span class="sig-name descname"><span class="pre">aligned_datapair_from_adatas</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">adatas</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">AnnData</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vars_feat</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vars_as_nodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">oo_adjs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">spmatrix</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_names</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">('reference',</span> <span class="pre">'query')</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwds</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#BrainAlign.came.datapair.aligned.AlignedDataPair" title="BrainAlign.came.datapair.aligned.AlignedDataPair"><span class="pre">AlignedDataPair</span></a></span></span><a class="headerlink" href="#BrainAlign.came.datapair.aligned.aligned_datapair_from_adatas" title="Permalink to this definition"></a></dt>
+<dd><p>Build <code class="docutils literal notranslate"><span class="pre">AlignedDataPair</span></code> object from a pair of adatas.</p>
+<p>Note that the node features will be extracted from <code class="docutils literal notranslate"><span class="pre">adata.raw</span></code>
+(if not None), so please make sure that these values are normalized.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>adatas</strong> – a list or tuple of 2 sc.AnnData objects.</p></li>
+<li><p><strong>vars_feat</strong> – a list of variable-names that will be used as (cell) node features.
+for example, names of differentail expressed genes (DEGs),
+highly variable features.</p></li>
+<li><p><strong>vars_as_nodes</strong> – a sequence of variable names, optional.
+a name-list of variables that will be taken as nodes in the graph
+for model training.
+if None (not provided), it will be the same as <cite>vars_feat</cite></p></li>
+<li><p><strong>oo_adjs</strong> – a sequence of (sparse) adjacent matrices of observations.
+for example, the single-cell network within each dataset.</p></li>
+<li><p><strong>dataset_names</strong> – list or tuple of 2. names to discriminate data source,
+e.g. (‘reference’, ‘query’)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>dpair</strong></p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#BrainAlign.came.datapair.aligned.AlignedDataPair" title="BrainAlign.came.datapair.aligned.AlignedDataPair">AlignedDataPair</a></p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">dpair</span> <span class="o">=</span> <span class="n">aligned_datapair_from_adatas</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="p">[</span><span class="n">adata1</span><span class="p">,</span> <span class="n">adata2</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="n">vars_feat</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">dataset_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;reference&#39;</span><span class="p">,</span> <span class="s1">&#39;query&#39;</span><span class="p">]</span>
+<span class="gp">... </span>    <span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#BrainAlign.came.datapair.aligned.AlignedDataPair" title="BrainAlign.came.datapair.aligned.AlignedDataPair"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AlignedDataPair</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">DataPair</span></code>, <a class="reference internal" href="#BrainAlign.came.datapair.aligned.aligned_datapair_from_adatas" title="BrainAlign.came.datapair.aligned.aligned_datapair_from_adatas"><code class="xref py py-obj docutils literal notranslate"><span class="pre">aligned_datapair_from_adatas</span></code></a></p>
+</div>
+</dd></dl>
+
+</section>
+<section id="module-BrainAlign.came.datapair.unaligned">
+<span id="brainalign-came-datapair-unaligned-module"></span><h2>BrainAlign.came.datapair.unaligned module<a class="headerlink" href="#module-BrainAlign.came.datapair.unaligned" title="Permalink to this heading"></a></h2>
+<p>Created on Fri Aug 28 23:57:02 2020</p>
+<p>&#64;author: Xingyan Liu</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.unaligned.DataPair">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">BrainAlign.came.datapair.unaligned.</span></span><span class="sig-name descname"><span class="pre">DataPair</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">spmatrix</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ov_adjs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">spmatrix</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_adj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">spmatrix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">oo_adjs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">spmatrix</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">varnames_feat</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">varnames_node</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obs_dfs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">DataFrame</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">var_dfs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">DataFrame</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_names</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">('reference',</span> <span class="pre">'query')</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ntypes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">etypes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">make_graph</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwds</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.datapair.unaligned.DataPair" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Paired datasets with the un-aligned features (e.g., cross-speceis)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>features</strong> (<em>list</em><em> or </em><em>tuple</em>) – a list or tuple of 2 feature matrices.
+common / aligned features, as node-features (for observations).
+of shape (n_obs1, n_features) and (n_obs2, n_features)</p></li>
+<li><p><strong>ov_adjs</strong> (<em>list</em><em> or </em><em>tuple</em>) – a list or tuple of 2 (sparse) feature matrices.
+unaligned features, for making <cite>ov_adj</cite>.
+of shape (n_obs1, n_vnodes1) and (n_obs2, n_vnodes2)</p></li>
+<li><p><strong>vv_adj</strong> (<em>scipy.sparse.spmatrix</em>) – adjacent matrix between variables from these 2 datasets.
+(e.g. gene-gene adjacent matrix) of shape (n_vnodes, n_vnodes),
+where n_vnodes (= n_vnodes1 + n_vnodes2) is the total number of
+variable-nodes.</p></li>
+<li><p><strong>varnames_node</strong> (<em>list</em><em> or </em><em>tuple</em>) – a list or tuple of 2 name-lists, or one concatenated name-list.
+lengths should be <cite>n_vnodes1</cite> and <cite>v_nodes2</cite>.</p></li>
+<li><p><strong>obs_dfs</strong> (<em>list</em><em> or </em><em>tuple</em>) – a list or tuple of 2 <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> s</p></li>
+<li><p><strong>ntypes</strong> (<em>dict</em>) – A dict for specifying names of the node types</p></li>
+<li><p><strong>etypes</strong> (<em>dict</em>) – A dict for specifying names of the edge types</p></li>
+<li><p><strong>**kwds</strong> – other key words for the HeteroGraph construction</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">dpair</span> <span class="o">=</span> <span class="n">DataPair</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="p">[</span><span class="n">features1</span><span class="p">,</span> <span class="n">features2</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="p">[</span><span class="n">ov_adj1</span><span class="p">,</span> <span class="n">ov_adj2</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="n">vv_adj</span> <span class="o">=</span> <span class="n">vv_adj</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">varnames_node</span> <span class="o">=</span> <span class="p">[</span><span class="n">vnodes1</span><span class="p">,</span> <span class="n">vnodes2</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="n">obs_dfs</span> <span class="o">=</span> <span class="p">[</span><span class="n">df1</span><span class="p">,</span> <span class="n">df2</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="n">dataset_names</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;reference&#39;</span><span class="p">,</span> <span class="s1">&#39;query&#39;</span><span class="p">),</span>
+<span class="gp">... </span>    <span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#BrainAlign.came.datapair.unaligned.datapair_from_adatas" title="BrainAlign.came.datapair.unaligned.datapair_from_adatas"><code class="xref py py-obj docutils literal notranslate"><span class="pre">datapair_from_adatas</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">aligned_datapair_from_adatas</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">AlignedDataPair</span></code></p>
+</div>
+<dl class="py property">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.unaligned.DataPair.G">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">G</span></span><a class="headerlink" href="#BrainAlign.came.datapair.unaligned.DataPair.G" title="Permalink to this definition"></a></dt>
+<dd><p>The graph structure, of type <code class="docutils literal notranslate"><span class="pre">dgl.Heterograph</span></code></p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.unaligned.DataPair.classes">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">classes</span></span><a class="headerlink" href="#BrainAlign.came.datapair.unaligned.DataPair.classes" title="Permalink to this definition"></a></dt>
+<dd><p>Unique classes (types) in the reference data, may contain “unknown”
+if there are any types in the query data but not in the reference,
+or if the query data is un-labeled.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.unaligned.DataPair.etypes">
+<span class="sig-name descname"><span class="pre">etypes</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'oo':</span> <span class="pre">'similar_to',</span> <span class="pre">'ov':</span> <span class="pre">'express',</span> <span class="pre">'vo':</span> <span class="pre">'expressed_by',</span> <span class="pre">'vv':</span> <span class="pre">'homolog_with'}</span></em><a class="headerlink" href="#BrainAlign.came.datapair.unaligned.DataPair.etypes" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.unaligned.DataPair.feat_names1">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">feat_names1</span></span><a class="headerlink" href="#BrainAlign.came.datapair.unaligned.DataPair.feat_names1" title="Permalink to this definition"></a></dt>
+<dd><p>Feature ames of the observation (e.g., cell) nodes
+in the reference data</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.unaligned.DataPair.feat_names2">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">feat_names2</span></span><a class="headerlink" href="#BrainAlign.came.datapair.unaligned.DataPair.feat_names2" title="Permalink to this definition"></a></dt>
+<dd><p>Feature ames of the observation (e.g., cell) nodes
+in the query data</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.unaligned.DataPair.get_feature_dict">
+<span class="sig-name descname"><span class="pre">get_feature_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">astensor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit_var</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwds</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.datapair.unaligned.DataPair.get_feature_dict" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.unaligned.DataPair.get_obs_anno">
+<span class="sig-name descname"><span class="pre">get_obs_anno</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keys</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">which</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">concat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.datapair.unaligned.DataPair.get_obs_anno" title="Permalink to this definition"></a></dt>
+<dd><p>get the annotations of samples (observations)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.unaligned.DataPair.get_obs_dataset">
+<span class="sig-name descname"><span class="pre">get_obs_dataset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.datapair.unaligned.DataPair.get_obs_dataset" title="Permalink to this definition"></a></dt>
+<dd><p>Get the dataset-identities for the observations</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.unaligned.DataPair.get_obs_features">
+<span class="sig-name descname"><span class="pre">get_obs_features</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">astensor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit_var</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clip</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clip_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(-3,</span> <span class="pre">3.5)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.datapair.unaligned.DataPair.get_obs_features" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.unaligned.DataPair.get_obs_ids">
+<span class="sig-name descname"><span class="pre">get_obs_ids</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">which</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">astensor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.datapair.unaligned.DataPair.get_obs_ids" title="Permalink to this definition"></a></dt>
+<dd><p>get node indices for obs-nodes (samples)
+choices are:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>all the node ids (by <cite>which=None</cite>)</p></li>
+<li><p>only the ids of the “reference” data (by <cite>which=0</cite>)</p></li>
+<li><p>only the ids of the “query” data (by <cite>which=1</cite>)</p></li>
+</ol>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.unaligned.DataPair.get_obs_labels">
+<span class="sig-name descname"><span class="pre">get_obs_labels</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keys</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">astensor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">train_use</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">add_unknown_force</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">asint</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name_unknown</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'unknown'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">categories</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">set_attr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.datapair.unaligned.DataPair.get_obs_labels" title="Permalink to this definition"></a></dt>
+<dd><p>make labels for model training</p>
+<p>If <cite>categories</cite> is provided, the labels will be coded according to it,
+and the names not in <cite>categories</cite> will be NA or <a href="#id3"><span class="problematic" id="id4">`</span></a>name_unknown`(‘unknown’)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.unaligned.DataPair.get_vnode_ids">
+<span class="sig-name descname"><span class="pre">get_vnode_ids</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">which</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">astensor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.datapair.unaligned.DataPair.get_vnode_ids" title="Permalink to this definition"></a></dt>
+<dd><dl class="simple">
+<dt>get node indices for var-nodes, choices are:</dt><dd><ol class="arabic simple">
+<li><p>all the node ids</p></li>
+<li><p>only the ids of the “reference” data (by <cite>which=0</cite>)</p></li>
+<li><p>only the ids of the “query” data (by <cite>which=1</cite>)</p></li>
+</ol>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.unaligned.DataPair.get_vnode_ids_by_name">
+<span class="sig-name descname"><span class="pre">get_vnode_ids_by_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">varlist</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">which</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unseen</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">nan</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rm_unseen</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.datapair.unaligned.DataPair.get_vnode_ids_by_name" title="Permalink to this definition"></a></dt>
+<dd><p>looking-up var-node indices for the given names</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.unaligned.DataPair.get_vnode_names">
+<span class="sig-name descname"><span class="pre">get_vnode_names</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vnode_ids</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tolist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.datapair.unaligned.DataPair.get_vnode_names" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.unaligned.DataPair.get_whole_net">
+<span class="sig-name descname"><span class="pre">get_whole_net</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rebuild</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwds</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.datapair.unaligned.DataPair.get_whole_net" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.unaligned.DataPair.labels">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">labels</span></span><a class="headerlink" href="#BrainAlign.came.datapair.unaligned.DataPair.labels" title="Permalink to this definition"></a></dt>
+<dd><p>Labels for each observations that would be taken as the supervised
+information for model-training.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.unaligned.DataPair.load">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fp</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.datapair.unaligned.DataPair.load" title="Permalink to this definition"></a></dt>
+<dd><p>load object
+fp:</p>
+<blockquote>
+<div><p>file path to <code class="docutils literal notranslate"><span class="pre">DataPair</span></code> object, e.g., ‘datapair_init.pickle’</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.unaligned.DataPair.make_ov_adj">
+<span class="sig-name descname"><span class="pre">make_ov_adj</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">link2ord</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.datapair.unaligned.DataPair.make_ov_adj" title="Permalink to this definition"></a></dt>
+<dd><p>observation-variable bipartite network</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.unaligned.DataPair.make_whole_net">
+<span class="sig-name descname"><span class="pre">make_whole_net</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">link2ord</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selfloop_o</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selfloop_v</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.datapair.unaligned.DataPair.make_whole_net" title="Permalink to this definition"></a></dt>
+<dd><p>make the whole hetero-graph (e.g. cell-gene graph)</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.unaligned.DataPair.n_feats">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">n_feats</span></span><a class="headerlink" href="#BrainAlign.came.datapair.unaligned.DataPair.n_feats" title="Permalink to this definition"></a></dt>
+<dd><p>Number of dimensions of the observation-node features</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.unaligned.DataPair.n_obs">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">n_obs</span></span><a class="headerlink" href="#BrainAlign.came.datapair.unaligned.DataPair.n_obs" title="Permalink to this definition"></a></dt>
+<dd><p>Total number of the observations (e.g., cells)</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.unaligned.DataPair.n_obs1">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">n_obs1</span></span><a class="headerlink" href="#BrainAlign.came.datapair.unaligned.DataPair.n_obs1" title="Permalink to this definition"></a></dt>
+<dd><p>Number of observations (e.g., cells) in the reference data</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.unaligned.DataPair.n_obs2">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">n_obs2</span></span><a class="headerlink" href="#BrainAlign.came.datapair.unaligned.DataPair.n_obs2" title="Permalink to this definition"></a></dt>
+<dd><p>Number of observations (e.g., cells) in the query data</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.unaligned.DataPair.n_vnodes">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">n_vnodes</span></span><a class="headerlink" href="#BrainAlign.came.datapair.unaligned.DataPair.n_vnodes" title="Permalink to this definition"></a></dt>
+<dd><p>Total number of the variables (e.g., genes)</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.unaligned.DataPair.n_vnodes1">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">n_vnodes1</span></span><a class="headerlink" href="#BrainAlign.came.datapair.unaligned.DataPair.n_vnodes1" title="Permalink to this definition"></a></dt>
+<dd><p>Number of variables (e.g., genes) in the reference data</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.unaligned.DataPair.n_vnodes2">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">n_vnodes2</span></span><a class="headerlink" href="#BrainAlign.came.datapair.unaligned.DataPair.n_vnodes2" title="Permalink to this definition"></a></dt>
+<dd><p>Number of variables (e.g., genes) in the query data</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.unaligned.DataPair.ntypes">
+<span class="sig-name descname"><span class="pre">ntypes</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'o':</span> <span class="pre">'cell',</span> <span class="pre">'v':</span> <span class="pre">'gene'}</span></em><a class="headerlink" href="#BrainAlign.came.datapair.unaligned.DataPair.ntypes" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.unaligned.DataPair.obs_ids">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">obs_ids</span></span><a class="headerlink" href="#BrainAlign.came.datapair.unaligned.DataPair.obs_ids" title="Permalink to this definition"></a></dt>
+<dd><p>All of the observation (e.g., cell) indices</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.unaligned.DataPair.obs_ids1">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">obs_ids1</span></span><a class="headerlink" href="#BrainAlign.came.datapair.unaligned.DataPair.obs_ids1" title="Permalink to this definition"></a></dt>
+<dd><p>Indices of the observation (e.g., cell) nodes in the reference data</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.unaligned.DataPair.obs_ids2">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">obs_ids2</span></span><a class="headerlink" href="#BrainAlign.came.datapair.unaligned.DataPair.obs_ids2" title="Permalink to this definition"></a></dt>
+<dd><p>Indices of the observation (e.g., cell) nodes in the query data</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.unaligned.DataPair.oo_adj">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">oo_adj</span></span><a class="headerlink" href="#BrainAlign.came.datapair.unaligned.DataPair.oo_adj" title="Permalink to this definition"></a></dt>
+<dd><p>observation-by-variable adjacent matrix
+(e.g. cell-gene adjacent matrix)</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.unaligned.DataPair.ov_adj">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ov_adj</span></span><a class="headerlink" href="#BrainAlign.came.datapair.unaligned.DataPair.ov_adj" title="Permalink to this definition"></a></dt>
+<dd><p>merged adjacent matrix between observation and variable nodes
+(e.g. cell-gene adjacent matrix)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.unaligned.DataPair.save_init">
+<span class="sig-name descname"><span class="pre">save_init</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'datapair_init.pickle'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.datapair.unaligned.DataPair.save_init" title="Permalink to this definition"></a></dt>
+<dd><p>save object for reloading</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">adpair</span><span class="o">.</span><span class="n">save_init</span><span class="p">(</span><span class="s1">&#39;datapair_init.pickle&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">element_dict</span> <span class="o">=</span> <span class="n">load_pickle</span><span class="p">(</span><span class="s1">&#39;datapair_init.pickle&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">adpair</span> <span class="o">=</span> <span class="n">DataPair</span><span class="p">(</span><span class="o">**</span><span class="n">element_dict</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.unaligned.DataPair.set_common_obs_annos">
+<span class="sig-name descname"><span class="pre">set_common_obs_annos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwannos</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.datapair.unaligned.DataPair.set_common_obs_annos" title="Permalink to this definition"></a></dt>
+<dd><p>Shared and merged annotation labels for ALL of the observations in both
+datasets. (self.obs, pd.DataFrame)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.unaligned.DataPair.set_dataset_names">
+<span class="sig-name descname"><span class="pre">set_dataset_names</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_names</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.datapair.unaligned.DataPair.set_dataset_names" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.unaligned.DataPair.set_etypes">
+<span class="sig-name descname"><span class="pre">set_etypes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">etypes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.datapair.unaligned.DataPair.set_etypes" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.unaligned.DataPair.set_features">
+<span class="sig-name descname"><span class="pre">set_features</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">varnames_feat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.datapair.unaligned.DataPair.set_features" title="Permalink to this definition"></a></dt>
+<dd><p>setting feature matrices, where features are aligned across datasets.
+varnames_feat:</p>
+<blockquote>
+<div><p>if provided, should be a sequence of two name-lists</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.unaligned.DataPair.set_ntypes">
+<span class="sig-name descname"><span class="pre">set_ntypes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ntypes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.datapair.unaligned.DataPair.set_ntypes" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.unaligned.DataPair.set_obs_dfs">
+<span class="sig-name descname"><span class="pre">set_obs_dfs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obs2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.datapair.unaligned.DataPair.set_obs_dfs" title="Permalink to this definition"></a></dt>
+<dd><p>Set private observation annotations
+(should be done AFTER running <code class="docutils literal notranslate"><span class="pre">self.set_features(..)</span></code>)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.unaligned.DataPair.set_oo_adj">
+<span class="sig-name descname"><span class="pre">set_oo_adj</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">oo_adjs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.datapair.unaligned.DataPair.set_oo_adj" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.unaligned.DataPair.set_ov_adj">
+<span class="sig-name descname"><span class="pre">set_ov_adj</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ov_adjs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.datapair.unaligned.DataPair.set_ov_adj" title="Permalink to this definition"></a></dt>
+<dd><p>set un-aligned features, for making observation-variable adjacent matrix</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.unaligned.DataPair.set_var_dfs">
+<span class="sig-name descname"><span class="pre">set_var_dfs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">var1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">var2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.datapair.unaligned.DataPair.set_var_dfs" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.unaligned.DataPair.set_vnode_annos">
+<span class="sig-name descname"><span class="pre">set_vnode_annos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_reset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwannos</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.datapair.unaligned.DataPair.set_vnode_annos" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.unaligned.DataPair.set_vv_adj">
+<span class="sig-name descname"><span class="pre">set_vv_adj</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vv_adj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">varnames_node</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.datapair.unaligned.DataPair.set_vv_adj" title="Permalink to this definition"></a></dt>
+<dd><dl class="simple">
+<dt>vv_adj:</dt><dd><p>adjacent matrix between variables from these 2 datasets.
+e.g. gene-gene network, with each edge connecting each pair of
+homologous genes.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.unaligned.DataPair.summary_graph">
+<span class="sig-name descname"><span class="pre">summary_graph</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.datapair.unaligned.DataPair.summary_graph" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.unaligned.DataPair.var_ids1">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">var_ids1</span></span><a class="headerlink" href="#BrainAlign.came.datapair.unaligned.DataPair.var_ids1" title="Permalink to this definition"></a></dt>
+<dd><p>Indices of the variable (e.g., gene) nodes in the reference data</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.unaligned.DataPair.var_ids2">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">var_ids2</span></span><a class="headerlink" href="#BrainAlign.came.datapair.unaligned.DataPair.var_ids2" title="Permalink to this definition"></a></dt>
+<dd><p>Indices of the variable (e.g., gene) nodes in the query data</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.unaligned.DataPair.vnode_names1">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">vnode_names1</span></span><a class="headerlink" href="#BrainAlign.came.datapair.unaligned.DataPair.vnode_names1" title="Permalink to this definition"></a></dt>
+<dd><p>Names of the variable (e.g., gene) nodes in the reference data</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.unaligned.DataPair.vnode_names2">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">vnode_names2</span></span><a class="headerlink" href="#BrainAlign.came.datapair.unaligned.DataPair.vnode_names2" title="Permalink to this definition"></a></dt>
+<dd><p>Names of the variable (e.g., gene) nodes in the query data</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.unaligned.DataPair.vv_adj">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">vv_adj</span></span><a class="headerlink" href="#BrainAlign.came.datapair.unaligned.DataPair.vv_adj" title="Permalink to this definition"></a></dt>
+<dd><p>var-var adjacent matrix (e.g. gene-gene adjacent matrix)</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.unaligned.datapair_from_adatas">
+<span class="sig-prename descclassname"><span class="pre">BrainAlign.came.datapair.unaligned.</span></span><span class="sig-name descname"><span class="pre">datapair_from_adatas</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">adatas</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">AnnData</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vars_feat</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">Sequence</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">df_varmap</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">df_varmap_1v1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'ignored'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">oo_adjs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">spmatrix</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vars_as_nodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">Sequence</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">union_var_nodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">union_node_feats</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_names</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">('reference',</span> <span class="pre">'query')</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">with_single_vnodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_non1v1_feats</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col_weight</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">non1v1_trans_to</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwds</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#BrainAlign.came.datapair.unaligned.DataPair" title="BrainAlign.came.datapair.unaligned.DataPair"><span class="pre">DataPair</span></a></span></span><a class="headerlink" href="#BrainAlign.came.datapair.unaligned.datapair_from_adatas" title="Permalink to this definition"></a></dt>
+<dd><p>Build <code class="docutils literal notranslate"><span class="pre">DataPair</span></code> object from a pair of adatas.</p>
+<p>Note that the node features will be extracted from <code class="docutils literal notranslate"><span class="pre">adata.raw</span></code>
+(if not None), so please make sure that these values are normalized.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>adatas</strong> (<em>list</em><em> or </em><em>tuple</em>) – a list or tuple of 2 sc.AnnData objects.</p></li>
+<li><p><strong>vars_feat</strong> – a list or tuple of 2 variable name-lists.
+for example, differential expressed genes, highly variable features.</p></li>
+<li><p><strong>df_varmap</strong> – pd.DataFrame with 2 columns.
+relationships between features in 2 datasets, for making the
+adjacent matrix (<cite>vv_adj</cite>) between variables from these 2 datasets.</p></li>
+<li><p><strong>df_varmap_1v1</strong> – dataframe containing only 1-to-1 correspondence between features
+in 2 datasets, if not provided, it will be inferred from <cite>df_varmap</cite></p></li>
+<li><p><strong>oo_adjs</strong> – a sequence of (sparse) adjacent matrices of observations.</p></li>
+<li><p><strong>vars_as_nodes</strong> – list or tuple of 2; variables to be taken as the graph nodes</p></li>
+<li><p><strong>union_var_nodes</strong> (<em>bool</em>) – whether to take the union of the variable-nodes</p></li>
+<li><p><strong>union_node_feats</strong> (<em>bool</em>) – whether to take the union of the observation-node-features</p></li>
+<li><p><strong>dataset_names</strong> – list or tuple of 2. names to discriminate data source,
+e.g. (‘reference’, ‘query’)</p></li>
+<li><p><strong>with_single_vnodes</strong> – whether to include the varibales (node) that are ocurred in only one of
+the datasets</p></li>
+<li><p><strong>keep_non1v1_feats</strong> (<em>bool</em>) – whether to take into account the non-1v1 variables as the node features.</p></li>
+<li><p><strong>col_weight</strong> – A column in <code class="docutils literal notranslate"><span class="pre">df_varmap</span></code> specifying the weights between homologies.</p></li>
+<li><p><strong>non1v1_trans_to</strong> (<em>int</em>) – the direction to transform non-1v1 features, should either be 0 or 1.
+Set as 0 to transform query data to the reference (default),
+1 to transform the reference data to the query.
+If set <code class="docutils literal notranslate"><span class="pre">keep_non1v1_feats=False</span></code>, this parameter will be ignored.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>dpair</strong></p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#BrainAlign.came.datapair.unaligned.DataPair" title="BrainAlign.came.datapair.unaligned.DataPair">DataPair</a></p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">dpair</span> <span class="o">=</span> <span class="n">datapair_from_adatas</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="p">[</span><span class="n">adata1</span><span class="p">,</span> <span class="n">adata2</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="n">vars_feat</span><span class="o">=</span><span class="p">[</span><span class="n">hvgs1</span><span class="p">,</span> <span class="n">hvgs2</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="n">df_varmap</span><span class="o">=</span><span class="n">homo_gene_matches</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">vars_as_nodes</span><span class="o">=</span><span class="p">[],</span>
+<span class="gp">... </span>    <span class="n">dataset_names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;reference&#39;</span><span class="p">,</span> <span class="s1">&#39;query&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><code class="xref py py-obj docutils literal notranslate"><span class="pre">AlignedDataPair</span></code>, <a class="reference internal" href="#BrainAlign.came.datapair.unaligned.DataPair" title="BrainAlign.came.datapair.unaligned.DataPair"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataPair</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">aligned_datapair_from_adatas</span></code></p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="BrainAlign.came.datapair.unaligned.make_features">
+<span class="sig-prename descclassname"><span class="pre">BrainAlign.came.datapair.unaligned.</span></span><span class="sig-name descname"><span class="pre">make_features</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">adatas</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vars1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vars2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">df_varmap</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col_weight</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">union_node_feats</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_non1v1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">non1v1_trans_to</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BrainAlign.came.datapair.unaligned.make_features" title="Permalink to this definition"></a></dt>
+<dd><p>Decide and make a pair of aligned feature matrices for CAME input.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>adatas</strong> – a pair of <code class="docutils literal notranslate"><span class="pre">sc.AnnData</span></code></p></li>
+<li><p><strong>vars1</strong> – variable-names in adatas[0], as the candidates</p></li>
+<li><p><strong>vars2</strong> – variable-names in adatas[1], as the candidates</p></li>
+<li><p><strong>df_varmap</strong> – A <code class="docutils literal notranslate"><span class="pre">pd.DataFrame</span></code> with (at least) 2 columns.
+variable mappings between features in the given pair of datasets.</p></li>
+<li><p><strong>col_weight</strong> – a column name in <code class="docutils literal notranslate"><span class="pre">df_varmap</span></code>, used for weighted-average-transformation
+of the non-1v1 features.</p></li>
+<li><p><strong>union_node_feats</strong> (<em>bool</em>) – whether to take the union of the cell-node features</p></li>
+<li><p><strong>keep_non1v1</strong> (<em>bool</em>) – whether to take into account the non-1v1 variables as the node features.</p></li>
+<li><p><strong>non1v1_trans_to</strong> (<em>int</em>) – the direction to transform non-1v1 features, should either be 0 or 1.
+Set as 0 to transform query data to the reference (default),
+1 to transform the reference data to the query.
+If set <code class="docutils literal notranslate"><span class="pre">keep_non1v1_feats=False</span></code>, this parameter will be ignored.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>features</strong> (<em>a tuple of length 2</em>)</p></li>
+<li><p><strong>trans</strong> (<em>pp.AdjacentTrans</em>)</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-BrainAlign.came.datapair">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-BrainAlign.came.datapair" title="Permalink to this heading"></a></h2>
+<p>Created on Sun Dec 27 21:59:44 2020</p>
+<p>&#64;author: Xingyan Liu</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Biao Zhang.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
