@@ -67,6 +67,7 @@ git clone https://github.com/zhanglabtools/BrainAlign
 The processed mouse and human datasets is avaible online on Google Drive: https://drive.google.com/drive/folders/1XLoReIZf_MzRryOvGe24A8fp3UoJLw19?usp=sharing
 The datasets file path/name and introduction are:
 - `mouse_2020sa_64regions.h5ad`: Mouse brain spot expression and spatial coordinates data from [https://www.molecularatlas.org/download-data](https://www.molecularatlas.org/download-data).
+- `mouse_2020sa_64regions_demo.h5ad`: Subsampled (down subsampling rate ~= 0.1) mouse brain spot expression and spatial coordinates data for easily reproduction.  
 - `human_brain_region_88_sparse_with3d.h5ad`: Human brain spot expression and spatial coordinates data from The data were 
 downloaded from the Allen Institute’s API (http://api.brain-map.org) and pre-processed using the 
 abagen package in Python (https://abagen.readthedocs.io/en/stable/).
@@ -123,6 +124,7 @@ if __name__ == '__main__':
 After running CAME, we get a result folder similar to `./BrainAlign/run_came/analysis_results/mouse_2020sa/Baron_mouse-Baron_human-06-03_14.38.27/` 
 2. Run BrainAlign and analyze the results for self-superwised alignment. The script file is `./BrainAlign/BrainAlign/data/srrsc_mouse_human_binary/Run_BrainAlign.py`:
 ```python
+# -- coding: utf-8 --
 import sys
 sys.path.append('../../../')
 from BrainAlign.code.utils import set_params
@@ -167,7 +169,7 @@ if __name__ == '__main__':
 
     cfg.BrainAlign.dataset = 'mouse_human_binary'
     cfg.BrainAlign.result_save_folder = './results_{}_1000genes_all_came_selfloop/'.format(cfg.BrainAlign.homo_region_num)
-    cfg.BrainAlign.experiment_time = '2023-06-23_20-31-14'#'2023-06-02_21-34-15' #'2023-05-11_10-08-35'#'2023-05-10_20-36-57'#time.strftime("%Y-%m-%d_%H-%M-%S")#'2023-04-30_23-00-05'#'2023-04-20_11-02-23'#'2023-02-12_10-57-19'#time.strftime("%Y-%m-%d_%H-%M-%S")  #'2023-01-04_10-15-59'
+    cfg.BrainAlign.experiment_time = '2023-06-23_20-31-14' #time.strftime("%Y-%m-%d_%H-%M-%S")
     cfg.BrainAlign.result_save_path = cfg.BrainAlign.result_save_folder + cfg.BrainAlign.experiment_time
     cfg.BrainAlign.embeddings_file_path = cfg.BrainAlign.result_save_path + "/embeds/"
     cfg.BrainAlign.DATA_PATH = cfg.BrainAlign.result_save_path + '/data/'
@@ -232,18 +234,15 @@ if __name__ == '__main__':
     cfg.SRRSC_args.nb_epochs = 100
 
     print('--------------------------Config:', cfg)
-    process.get_srrsc_input(cfg)
+    logger = process.get_srrsc_input(cfg)
     print('Training BrainAlign...')
-    main_sr_rsc.run_srrsc(cfg)
+    main_sr_rsc.run_srrsc(cfg, logger)
 
-    get_spatial_relation(cfg)
+    load_srrsc_embeddings(cfg)  
+    #get_spatial_relation(cfg)
 
     print('Analysis of BrainAlign embeddings...')
-
-
-    load_srrsc_embeddings(cfg)  # (21749, 128)
     #alignment_STs(cfg)
-
     alignment_STs_analysis_obj = alignment_STs_analysis(cfg)
     #alignment_STs_analysis_obj.forward()
     alignment_STs_analysis_obj.experiment_1_cross_species_clustering()
@@ -309,12 +308,29 @@ if __name__ == '__main__':
     spatial_analysis_obj.experiment_2_spatial_isocortex()
     spatial_analysis_obj.experiment_3_spatial_clusters()
 
-
 ```
+
 
 # Reproduction of Analysis
 The code after `print('Analysis of BrainAlign embeddings...')` are for reproduction of analysis results in the paper.
 
+For more convenient reproduction for personal computers, we provide a lighter input mouse dataset, named ``
+
+The expected basic results for whole datasets are as follows:
+
+![](readme_figs/alldatasets/seurate_alignment_score.png) | ![](readme_figs/alldatasets/umap_dataset_after_integration_rightmargin.png)
+--- | ---
+
+The expected basic results for demo datasets are as follows:
+
+![](readme_figs/subsampled/seurate_alignment_score.png) | ![](readme_figs/subsampled/umap_dataset_after_integration_rightmargin.png)
+--- | ---
+
+
+# Execution Time
+For the whole dataset with 150 epochs, the training of BrainAlign costs almost 20.2 hours on a engine with CPU Intel E5-2640 v4 2.4GHz, 256 RAM and CentOS system.
+For the demo dataset with 100 epochs, the training of BrainAlign costs almost 3.1 hours on a notebook computer with Intel(R) Core(TM) i7-10750H CPU @ 2.60GHz   2.59 GHz
+16GB RAM, and OS Windows 11.  
 
 # License
 

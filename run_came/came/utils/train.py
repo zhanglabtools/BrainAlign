@@ -1,9 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Sun Apr 11 19:15:45 2021
-
-@author: Xingyan Liu
-"""
 import logging
 from pathlib import Path
 import os
@@ -367,16 +362,41 @@ class Trainer(BaseTrainer):
         if sampler is None:
             sampler = model.get_sampler(g.canonical_etypes, 50)
 
-        train_dataloader = dgl.dataloading.DataLoader(
+        # collator = dgl.dataloading.EdgeCollator(
+        # g, {'cell': train_idx}, sampler)
+        #
+        # train_dataloader = torch.utils.data.DataLoader(
+        # collator.dataset, collate_fn = collator.collate,
+        # batch_size = batch_size, shuffle = True, drop_last = False, num_workers = 0)
+
+        train_dataloader = dgl.dataloading.NodeDataLoader(
             # The following arguments are specific to NodeDataLoader.
-            g, {'cell': train_idx},  # The node IDs to iterate over in minibatches
-            sampler, device=device,  # Put the sampled MFGs on CPU or GPU
-            # The following arguments are inherited from PyTorch DataLoader.
-            batch_size=batch_size, shuffle=True, drop_last=False, num_workers=0
+            g,
+            {'cell': train_idx},  # The node IDs to iterate over in minibatches
+            sampler,
+            device=device,  # Put the sampled MFGs on CPU or GPU # The following arguments are inherited from PyTorch DataLoader.
+            batch_size=batch_size,
+            shuffle=True,
+            drop_last=False,
+            num_workers=0
         )
-        test_dataloader = dgl.dataloading.DataLoader(
-            g, {'cell': test_idx}, sampler, device=device, batch_size=batch_size,
-            shuffle=False, drop_last=False, num_workers=0
+
+        # collator = dgl.dataloading.EdgeCollator(
+        #     g, {'cell': test_idx}, sampler)
+        #
+        # test_dataloader = torch.utils.data.DataLoader(
+        #     collator.dataset, collate_fn=collator.collate,
+        #     batch_size=batch_size, shuffle=False, drop_last=False, num_workers=0)
+
+        test_dataloader = dgl.dataloading.NodeDataLoader(
+            g,
+            {'cell': test_idx},
+            sampler,
+            device=device,
+            batch_size=batch_size,
+            shuffle=False,
+            drop_last=False,
+            num_workers=0
         )
         print(f" start training (device='{device}') ".center(60, '='))
         for epoch in range(n_epochs):

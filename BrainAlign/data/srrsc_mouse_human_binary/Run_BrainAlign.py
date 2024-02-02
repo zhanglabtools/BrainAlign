@@ -113,16 +113,14 @@ if __name__ == '__main__':
     cfg.SRRSC_args.nb_epochs = 100
 
     print('--------------------------Config:', cfg)
-    process.get_srrsc_input(cfg)
+    logger = process.get_srrsc_input(cfg)
     print('Training BrainAlign...')
-    main_sr_rsc.run_srrsc(cfg)
-
-    get_spatial_relation(cfg)
-
-    print('Analysis of BrainAlign embeddings...')
-
+    main_sr_rsc.run_srrsc(cfg, logger)
 
     load_srrsc_embeddings(cfg)  # (21749, 128)
+    #get_spatial_relation(cfg)
+
+    print('Analysis of BrainAlign embeddings...')
     #alignment_STs(cfg)
     alignment_STs_analysis_obj = alignment_STs_analysis(cfg)
     #alignment_STs_analysis_obj.forward()

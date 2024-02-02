@@ -1327,6 +1327,8 @@ class alignment_STs_analysis():
         fig_format = self.fig_format
 
         homo_region_data_path = cfg.BrainAlign.embeddings_file_path + 'figs/1_alignment_STs/3_experiment_homo_random/'
+        if not os.path.exists(homo_region_data_path):
+            os.makedirs(homo_region_data_path)
         with open(homo_region_data_path + 'human_mouse_correlation_dict.pkl', 'rb') as f:
             human_mouse_correlation_dict = pickle.load(f)
 

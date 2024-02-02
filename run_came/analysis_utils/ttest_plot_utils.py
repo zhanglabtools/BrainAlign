@@ -1,11 +1,13 @@
 import os.path
+import sys
+sys.path.append('../')
 import came
 from came import pipeline, pp, pl
 
 import logging
 import os
-import sys
-sys.path.append('../')
+#import sys
+#sys.path.append('../')
 from pathlib import Path
 
 import numpy as np
@@ -27,13 +29,6 @@ try:
     mpl.use('agg')
 except Exception as e:
     print(f"An error occurred when setting matplotlib backend ({e})")
-
-
-
-def load_part_regions(cfg):
-    adata_raw1 = sc.read_h5ad(cfg.CAME.path_rawdata1)
-    adata_raw2 = sc.read_h5ad(cfg.CAME.path_rawdata2)
-
 
 
 
@@ -78,9 +73,13 @@ def run_came(cfg):
 
     adata_raw1 = sc.read_h5ad(cfg.CAME.path_rawdata1)
 
+    sc.pp.neighbors(adata_raw1, n_neighbors=cfg.ANALYSIS.mouse_umap_neighbor, metric='cosine', use_rep='X')
+
     sc.tl.leiden(adata_raw1, resolution=9, key_added='cluster_region')
 
     adata_raw2 = sc.read_h5ad(cfg.CAME.path_rawdata2)
+    sc.pp.neighbors(adata_raw2, n_neighbors=cfg.ANALYSIS.human_umap_neighbor, metric='cosine', use_rep='X')
+
     sc.tl.leiden(adata_raw2, resolution=9, key_added='cluster_region')
 
     adatas = [adata_raw1, adata_raw2]
@@ -119,7 +118,7 @@ def run_came(cfg):
 
     # The training batch size
     # When the GPU memory is limited, set 4096 or more if possible.
-    batch_size = 4096
+    batch_size = 2048
 
     # The number of epochs to skip for checkpoint backup
     n_pass = 50

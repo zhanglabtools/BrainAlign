@@ -158,7 +158,7 @@ def get_all_hidden_states(
             sampler = dgl.dataloading.MultiLayerNeighborSampler(
                 sampler.fanouts[:-1])
 
-        dataloader = dgl.dataloading.DataLoader(
+        dataloader = dgl.dataloading.NodeDataLoader(
             g, {'cell': g.nodes('cell'), 'gene': g.nodes('gene')},
             sampler, device=device,
             batch_size=batch_size, shuffle=False, drop_last=False, num_workers=0
@@ -301,7 +301,7 @@ def get_model_outputs(
         ######################################
         if sampler is None:
             sampler = model.get_sampler(g.canonical_etypes, 50)
-        dataloader = dgl.dataloading.DataLoader(
+        dataloader = dgl.dataloading.NodeDataLoader(
             g, {'cell': g.nodes('cell')},
             sampler, device=device,
             batch_size=batch_size,
