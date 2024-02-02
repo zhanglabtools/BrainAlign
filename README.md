@@ -318,13 +318,26 @@ For more convenient reproduction for personal computers, we provide a lighter in
 
 The expected basic results for whole datasets are as follows:
 
-![](readme_figs/alldatasets/seurate_alignment_score.png) | ![](readme_figs/alldatasets/umap_dataset_after_integration_rightmargin.png)
---- | ---
+[//]: # (![]&#40;readme_figs/alldatasets/seurate_alignment_score.png&#41; | ![]&#40;readme_figs/alldatasets/umap_dataset_after_integration_rightmargin.png&#41;)
+
+[//]: # (--- | ---)
+
+<p align = "center">    
+<img  src="readme_figs/alldatasets/seurate_alignment_score.png" height="400" />
+<img  src="readme_figs/alldatasets/umap_dataset_after_integration_rightmargin.png" height="400" />
+</p>
+
 
 The expected basic results for demo datasets are as follows:
 
-![](readme_figs/subsampled/seurate_alignment_score.png) | ![](readme_figs/subsampled/umap_dataset_after_integration_rightmargin.png)
---- | ---
+[//]: # (![]&#40;readme_figs/subsampled/seurate_alignment_score.png&#41; | ![]&#40;readme_figs/subsampled/umap_dataset_after_integration_rightmargin.png&#41;)
+
+[//]: # (--- | ---)
+
+<p align = "center">    
+<img  src="readme_figs/subsampled/seurate_alignment_score.png" height="400" />
+<img  src="readme_figs/subsampled/umap_dataset_after_integration_rightmargin.png" height="400" />
+</p>
 
 
 # Execution Time
