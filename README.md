@@ -328,8 +328,8 @@ The expected basic results for demo datasets are as follows:
 
 
 # Execution Time
-For the whole dataset with 150 epochs, the training of BrainAlign costs almost 20.2 hours on a engine with CPU Intel E5-2640 v4 2.4GHz, 256 RAM and CentOS system.
-For the demo dataset with 100 epochs, the training of BrainAlign costs almost 3.1 hours on a notebook computer with Intel(R) Core(TM) i7-10750H CPU @ 2.60GHz   2.59 GHz
+- For the whole dataset with 150 epochs, the training of BrainAlign costs almost 20.2 hours on a engine with CPU Intel E5-2640 v4 2.4GHz, 256 RAM and CentOS system.
+- For the demo dataset with 100 epochs, the training of BrainAlign costs almost 3.1 hours on a notebook computer with Intel(R) Core(TM) i7-10750H CPU @ 2.60GHz,
 16GB RAM, and OS Windows 11.  
 
 # License
