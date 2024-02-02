@@ -84,7 +84,7 @@ if __name__ == '__main__':
 
     cfg.ANALYSIS.cut_ov = 0
 
-    cfg.SRRSC_args.lr = 0.01
+    cfg.SRRSC_args.lr = 0.02
     cfg.SRRSC_args.patience = 30
 
     cfg.SRRSC_args.out_ft = 128
