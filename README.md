@@ -322,9 +322,9 @@ The expected basic results for whole datasets are as follows:
 
 [//]: # (--- | ---)
 
-<p align = "center">    
-<img  src="readme_figs/alldatasets/seurate_alignment_score.png" height="400" />
-<img  src="readme_figs/alldatasets/umap_dataset_after_integration_rightmargin.png" height="400" />
+<p align = "left">    
+<img  src="readme_figs/alldatasets/seurate_alignment_score.png" height="300" />
+<img  src="readme_figs/alldatasets/umap_dataset_after_integration_rightmargin.png" height="300" />
 </p>
 
 
@@ -334,9 +334,9 @@ The expected basic results for demo datasets are as follows:
 
 [//]: # (--- | ---)
 
-<p align = "center">    
-<img  src="readme_figs/subsampled/seurate_alignment_score.png" height="400" />
-<img  src="readme_figs/subsampled/umap_dataset_after_integration_rightmargin.png" height="400" />
+<p align = "left">    
+<img  src="readme_figs/subsampled/seurate_alignment_score.png" height="300" />
+<img  src="readme_figs/subsampled/umap_dataset_after_integration_rightmargin.png" height="300" />
 </p>
 
 
