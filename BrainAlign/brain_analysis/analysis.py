@@ -39,7 +39,7 @@ from scipy.spatial.distance import pdist, squareform
 from scipy import stats
 
 # call marker gene
-from scGeneFit.functions import *
+#from scGeneFit.functions import *
 
 # color map
 import colorcet as cc

@@ -6,7 +6,7 @@
 
 import sys
 sys.path.append('../../../')
-from BrainAlign.code.utils import set_params
+#from BrainAlign.code.utils import set_params
 from BrainAlign.brain_analysis.configs import sr_rsc_config_binary
 from BrainAlign.brain_analysis.data_utils import load_dimensions_binary
 from BrainAlign.brain_analysis import process
