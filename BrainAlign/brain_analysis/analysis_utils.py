@@ -314,29 +314,29 @@ def gene_module_abstract_graph(cfg, adata_gene_embedding, save_path, fig_format,
     return None
 
 
-from adjustText import adjust_text
-
-def gen_mpl_labels(adata, groupby, exclude=(), ax=None, adjust_kwargs=None, text_kwargs=None):
-    if adjust_kwargs is None:
-        adjust_kwargs = {"text_from_points": False}
-    if text_kwargs is None:
-        text_kwargs = {}
-
-    medians = {}
-
-    for g, g_idx in adata.obs.groupby(groupby).groups.items():
-        if g in exclude:
-            continue
-        medians[g] = np.median(adata[g_idx].obsm["X_umap"], axis=0)
-
-    if ax is None:
-        texts = [
-            plt.text(x=x, y=y, s=k, **text_kwargs) for k, (x, y) in medians.items()
-        ]
-    else:
-        texts = [ax.text(x=x, y=y, s=k, **text_kwargs) for k, (x, y) in medians.items()]
-
-    adjust_text(texts, **adjust_kwargs)
+# from adjustText import adjust_text
+#
+# def gen_mpl_labels(adata, groupby, exclude=(), ax=None, adjust_kwargs=None, text_kwargs=None):
+#     if adjust_kwargs is None:
+#         adjust_kwargs = {"text_from_points": False}
+#     if text_kwargs is None:
+#         text_kwargs = {}
+#
+#     medians = {}
+#
+#     for g, g_idx in adata.obs.groupby(groupby).groups.items():
+#         if g in exclude:
+#             continue
+#         medians[g] = np.median(adata[g_idx].obsm["X_umap"], axis=0)
+#
+#     if ax is None:
+#         texts = [
+#             plt.text(x=x, y=y, s=k, **text_kwargs) for k, (x, y) in medians.items()
+#         ]
+#     else:
+#         texts = [ax.text(x=x, y=y, s=k, **text_kwargs) for k, (x, y) in medians.items()]
+#
+#     adjust_text(texts, **adjust_kwargs)
 
 
 if __name__ == '__main__':

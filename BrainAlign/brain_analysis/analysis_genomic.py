@@ -23,7 +23,7 @@ from BrainAlign.brain_analysis.data_utils import get_correlation, \
     Dict2Mapping, \
     plot_marker_selection_umap, \
     plot_marker_selection_umap_embedding
-from BrainAlign.brain_analysis.analysis_utils import gen_mpl_labels
+# from BrainAlign.brain_analysis.analysis_utils import gen_mpl_labels
 from BrainAlign.brain_analysis.process import normalize_before_pruning
 from scipy.spatial.distance import squareform, pdist
 sys.path.append('../')

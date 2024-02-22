@@ -16,13 +16,13 @@ import re, seaborn as sns
 from collections import OrderedDict
 import os
 sys.path.append('../code/')
-from BrainAlign.code.utils import set_params
+#from BrainAlign.code.utils import set_params
 from BrainAlign.brain_analysis.configs import heco_config
 from BrainAlign.brain_analysis.data_utils import get_correlation, \
     Dict2Mapping, \
     plot_marker_selection_umap, \
     plot_marker_selection_umap_embedding
-from BrainAlign.brain_analysis.analysis_utils import gen_mpl_labels
+# from BrainAlign.brain_analysis.analysis_utils import gen_mpl_labels
 from BrainAlign.brain_analysis.process import normalize_before_pruning
 from scipy.spatial.distance import squareform, pdist
 sys.path.append('../')
@@ -48,7 +48,7 @@ from scipy.spatial.distance import pdist, squareform
 from scipy import stats
 
 # call marker gene
-from scGeneFit.functions import *
+#from scGeneFit.functions import *
 
 # color map
 import colorcet as cc

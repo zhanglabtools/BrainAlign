@@ -18,7 +18,7 @@ import re, seaborn as sns
 from collections import OrderedDict
 import os
 sys.path.append('../code/')
-from BrainAlign.code.utils import set_params
+#from BrainAlign.code.utils import set_params
 from BrainAlign.brain_analysis.configs import heco_config
 from BrainAlign.brain_analysis.data_utils import plot_marker_selection_umap, plot_marker_selection_umap_embedding, get_submin
 from BrainAlign.brain_analysis.process import normalize_before_pruning
