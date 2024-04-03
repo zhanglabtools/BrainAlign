@@ -16,10 +16,14 @@ sys.path.append('../code/')
 #from BrainAlign.code.utils import set_params
 from BrainAlign.code.utils.logger import setup_logger
 from BrainAlign.brain_analysis.configs import heco_config
-from BrainAlign.brain_analysis.data_utils import threshold_top, threshold_quantile, threshold_std, train_test_val_split, corr2_coeff
+from BrainAlign.brain_analysis.data_utils import threshold_top, threshold_quantile, threshold_std, train_test_val_split, corr2_coeff, get_common_one2one_embedding
 from BrainAlign.came.utils import preprocess
 from functools import reduce
 from sklearn.neighbors import kneighbors_graph
+
+
+
+
 
 def transform_pca_embedding(Mat, M_embedding):
     '''
@@ -329,6 +333,45 @@ def load_embedding(cfg, logger):
     elif cfg.BrainAlign.embedding_type == 'came':
         load_sample_embedding(mouse_sample_list, human_sample_list, cfg)
         load_gene_embedding(mouse_gene_list, human_gene_list, cfg, logger)
+
+    elif cfg.BrainAlign.embedding_type == 'one2one':
+        logger.info('Use one-to-one orthologs embedding.')
+        logger.info('Processing species 1 embedding...')
+        path_rawdata_1 = cfg.CAME.path_rawdata1
+        adata_1 = sc.read_h5ad(path_rawdata_1)
+        adata_1 = adata_1[:, mouse_gene_list].copy()
+        # update adata_1 according to came network
+        path_rawdata_2 = cfg.CAME.path_rawdata2
+        adata_2 = sc.read_h5ad(path_rawdata_2)
+        adata_2 = adata_2[:, human_gene_list].copy()
+
+        species1 = cfg.BrainAlign.dsnames[0]
+        species2 = cfg.BrainAlign.dsnames[1]
+        
+        adata_dict = {species1: adata_1, species2: adata_2}
+
+        df_varmap_1v1 = pd.read_csv(cfg.CAME.path_varmap_1v1)
+
+        adata_dict = get_common_one2one_embedding(adata_dict, df_varmap_1v1, n_top_genes = 5000, embedding_size = cfg.SRRSC_args.out_ft)
+
+        one2one_k = 0
+        for species_id, adata in adata_dict.items():
+            if one2one_k == 0:
+                spot_X = adata.obsm['one2one_embedding']
+                gene_X = transform_pca_embedding_np(adata.X.toarray(), adata.obsm['one2one_embedding'])
+            else:
+                spot_X = np.concatenate((spot_X, adata.obsm['one2one_embedding']), axis=0)
+                temp_gene_X = transform_pca_embedding_np(adata.X.toarray(), adata.obsm['one2one_embedding'])
+                gene_X = np.concatenate((gene_X, temp_gene_X), axis=0)
+            
+            one2one_k += 1
+
+
+        if cfg.BrainAlign.NODE_TYPE_NUM == 2:
+            logger.debug('Sample init feature dimension = {}'.format(spot_X.shape))
+            sp.save_npz(cfg.BrainAlign.DATA_PATH + 's_feat.npz', sp.csr_matrix(spot_X))
+            sp.save_npz(cfg.BrainAlign.DATA_PATH + 'm_feat.npz', sp.csr_matrix(gene_X))
+
 
     elif cfg.BrainAlign.embedding_type == 'pca_sample_pass_gene':
         logger.info('Use PCA embedding.')
@@ -934,6 +977,32 @@ def get_spatial_relation(cfg):
 
 
 
+def get_spatial_relation_2d(cfg):
+    expression_specie1_path = cfg.CAME.path_rawdata1
+    adata_specie1 = sc.read_h5ad(expression_specie1_path)
+    print(adata_specie1)
+    
+    xyz_arr1 = adata_specie1.obsm['spatial'] # N row, each row is in 2 dimension
+    ss_1 = kneighbors_graph(xyz_arr1, 1 + cfg.BrainAlign.spatial_node_neighbor, mode='connectivity', include_self=False) > 0
+
+    expression_specie2_path = cfg.CAME.path_rawdata2
+    adata_specie2 = sc.read_h5ad(expression_specie2_path)
+    print(adata_specie2)
+    
+    xyz_arr2 = adata_specie2.obsm['spatial'] # N row, each row is in 2 dimension
+    vv_2 = kneighbors_graph(xyz_arr2, 1 + cfg.BrainAlign.spatial_node_neighbor, mode='connectivity', include_self=False) > 0
+    ss_1 = sp.csr_matrix(ss_1).tocoo()
+    vv_2 = sp.csr_matrix(vv_2).tocoo()
+    ss_row = np.concatenate((ss_1.row, vv_2.row + cfg.BrainAlign.binary_S))
+    ss_col = np.concatenate((ss_1.col, vv_2.col + cfg.BrainAlign.binary_S))
+    ss_data = np.concatenate((ss_1.data, vv_2.data))
+    ss_ = sp.coo_matrix((ss_data, (ss_row, ss_col)), shape=(cfg.BrainAlign.S, cfg.BrainAlign.S)).toarray()
+    # print(adata_human)
+    #coordinates_3d_specie1 = adata_sm.obs
+    return ss_
+
+
+
 
 
 def get_srrsc_input(cfg):
@@ -1041,35 +1110,6 @@ def get_srrsc_input(cfg):
         # sm_1 = datapair['ov_adjs'][0].tocoo().toarray()
         # sm_2 = datapair['ov_adjs'][1].tocoo().toarray()
 
-        '''
-
-        if cfg.BrainAlign.if_threshold:
-            if cfg.BrainAlign.pruning_method == 'top':
-                sm_1 = threshold_top(sm_1, percent=cfg.BrainAlign.sm_gene_top) + threshold_top(sm_1.T,
-                                                                                         percent=cfg.BrainAlign.sm_sample_top).T
-                sm_2 = threshold_top(sm_2, percent=cfg.BrainAlign.vh_gene_top) + threshold_top(sm_2.T,
-                                                                                         percent=cfg.BrainAlign.vh_sample_top).T
-            elif cfg.BrainAlign.pruning_method == 'std':
-                # threshold_std(sm_1, std_times=cfg.BrainAlign.pruning_std_times_sm) + \
-                sm_1 = threshold_top(sm_1, percent=cfg.BrainAlign.sm_gene_top) + \
-                       threshold_std(sm_1, std_times=cfg.BrainAlign.pruning_std_times_sm) + \
-                       threshold_top(sm_1.T, percent=cfg.BrainAlign.sm_sample_top).T
-                # threshold_std(sm_2, std_times=cfg.BrainAlign.pruning_std_times_vh) + \
-                sm_2 = threshold_top(sm_2, percent=cfg.BrainAlign.vh_gene_top) + \
-                       threshold_std(sm_2, std_times=cfg.BrainAlign.pruning_std_times_vh) + \
-                       threshold_top(sm_2.T, percent=cfg.BrainAlign.vh_sample_top).T
-                # sm_1 = threshold_std(sm_1, std_times=cfg.BrainAlign.pruning_std_times_sm) + threshold_std(sm_1.T,
-                #                                                                                    std_times=cfg.BrainAlign.pruning_std_times_sm).T
-                # sm_2 = threshold_std(sm_2, std_times=cfg.BrainAlign.pruning_std_times_vh) + threshold_std(sm_2.T,
-                #                                                                           std_times=cfg.BrainAlign.pruning_std_times_vh).T
-                print('sm sparsity = {}'.format(np.sum(sm_1) / (cfg.BrainAlign.binary_S * cfg.BrainAlign.binary_M)))
-                print('vh sparsity = {}'.format(np.sum(sm_2) / (cfg.BrainAlign.binary_V * cfg.BrainAlign.binary_H)))
-        else:
-            sm_1 = sm_1 > 0
-            sm_2 = sm_2 > 0
-
-        '''
-
         sm_1 = sp.csr_matrix(sm_1).tocoo()
         sm_2 = sp.csr_matrix(sm_2).tocoo()
 
@@ -1081,6 +1121,8 @@ def get_srrsc_input(cfg):
         # mh_ = datapair['vv_adj'].toarray()[0:cfg.BrainAlign.M, cfg.BrainAlign.M:] > 0
         if cfg.BrainAlign.node_relation == 'spatial':
             ss_ = get_spatial_relation(cfg)
+        elif cfg.BrainAlign.node_relation == 'spatial_2d':
+            ss_ = get_spatial_relation_2d(cfg)
         elif cfg.BrainAlign.node_relation == 'knn':
             ss_ = datapair['oo_adjs'].toarray() > 0
 
@@ -1242,39 +1284,6 @@ def get_srrsc_input(cfg):
         vh_ = adata_vh.X.toarray()
 
         # sm_ = datapair['ov_adjs'][0].toarray()
-        '''
-        if cfg.BrainAlign.if_threshold:
-            if cfg.BrainAlign.pruning_method == 'top':
-                sm_ = threshold_top(sm_, percent=cfg.BrainAlign.sm_gene_top) + threshold_top(sm_.T,
-                                                                                       percent=cfg.BrainAlign.sm_sample_top).T
-            elif cfg.BrainAlign.pruning_method == 'std':
-                # threshold_std(sm_, std_times=cfg.BrainAlign.pruning_std_times_sm) + \
-                sm_ = threshold_top(sm_, percent=cfg.BrainAlign.sm_gene_top) + \
-                      threshold_std(sm_, std_times=cfg.BrainAlign.pruning_std_times_sm) + \
-                      threshold_top(sm_.T, percent=cfg.BrainAlign.sm_sample_top).T
-                # sm_ = threshold_std(sm_, std_times=cfg.BrainAlign.pruning_std_times_sm) + threshold_std(sm_.T,
-                #                                                                                  std_times=cfg.BrainAlign.pruning_std_times_sm).T
-        else:
-            sm_ = sm_ > 0
-        print(sm_)
-        logger.debug(f'sm_: {sm_.shape}')
-
-        # vh_ = datapair['ov_adjs'][1].toarray()
-        if cfg.BrainAlign.if_threshold:
-            if cfg.BrainAlign.pruning_method == 'top':
-                vh_ = threshold_top(vh_, percent=cfg.BrainAlign.vh_gene_top) + threshold_top(vh_.T,
-                                                                                       percent=cfg.BrainAlign.vh_sample_top).T
-            elif cfg.BrainAlign.pruning_method == 'std':
-                # threshold_std(vh_, std_times=cfg.BrainAlign.pruning_std_times_vh) + \
-                vh_ = threshold_top(vh_, percent=cfg.BrainAlign.vh_gene_top) + \
-                      threshold_std(vh_, std_times=cfg.BrainAlign.pruning_std_times_vh) + \
-                      threshold_top(vh_.T, percent=cfg.BrainAlign.vh_sample_top).T
-                # vh_ = threshold_std(vh_, std_times=cfg.BrainAlign.pruning_std_times_vh) + threshold_std(vh_.T,
-                #                                                                                  std_times=cfg.BrainAlign.pruning_std_times_vh).T
-        else:
-            vh_ = vh_ > 0
-
-        '''
         sm_ = sm_ > 0
         vh_ = vh_ > 0
 
