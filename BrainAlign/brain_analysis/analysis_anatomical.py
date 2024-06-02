@@ -30,28 +30,9 @@ from sklearn.cluster import KMeans
 from sklearn.preprocessing import normalize
 
 from matplotlib import rcParams
-
-from xgboost import XGBClassifier
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import accuracy_score, f1_score, roc_auc_score
-
 from scipy.spatial.distance import pdist, squareform
 
 from scipy import stats
-
-# call marker gene
-#from scGeneFit.functions import *
-
-# color map
-import colorcet as cc
-
-from collections import Counter
-
-# get gene ontology
-import gseapy
-
-from imblearn.over_sampling import RandomOverSampler
-from statannot import add_stat_annotation
 
 try:
     import matplotlib as mpl
@@ -61,11 +42,6 @@ except Exception as e:
 
 from BrainAlign.brain_analysis.metrics import seurat_alignment_score
 
-from BrainAlign.brain_analysis.analysis_utils import get_common_special_gene_list, \
-    get_homologous_mat, \
-    get_homologous_gene_list, \
-    average_expression, \
-    gene_module_abstract_graph
 
 from webcolors import hex_to_rgb
 
