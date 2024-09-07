@@ -1,5 +1,6 @@
 
 The source code of paper 'Whole Brain Alignment of Spatial Transcriptomics between Humans and Mice with BrainAlign'
+![image](https://github.com/user-attachments/assets/a233d607-5763-4257-9c7c-818a1c6ef68e)
 
 # BrainAlign
 
